@@ -1,0 +1,97 @@
+@keyframes blink {
+  0%,
+  100%,
+  19.999%,
+  22%,
+  45%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  85% {
+    opacity: 0.99;
+    text-shadow: -1px -1px 0 var(--outline), 1px -1px 0 var(--outline), -1px 1px 0 var(--outline), 1px 1px 0 var(--outline), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+  }
+
+  0%,
+  100%,
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999%,
+  80% {
+    opacity: 0.4;
+    text-shadow: none;
+  }
+}
+
+.menu-container {
+  position: relative;
+  font-size: 4rem;
+  font-family: 'Inconsolata';
+  font-weight: 400;
+  .logo {
+    position: fixed;
+    left: 50%;
+    -webkit-transform: translate(-50%,0%);
+    -ms-transform: translate(-50%,0%);
+    transform: translate(-50%,0%);
+    /* text-align: left; */
+    z-index: 2;
+  }
+
+  ul {
+    /* border: 1px solid red; */
+    /* font-size: 4.2rem; */
+    position: fixed;
+    right: 0;
+    color: lightGrey;
+    z-index: 2;
+    margin: 0 20px 0 auto;
+  }
+}
+
+.alien-logo {
+  height: 10rem;
+}
+
+.menu-list {
+  border: 1px solid lightGrey;
+  width: 35rem;
+  height: 35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 0 13rem;
+  background-color: black;
+  z-index: 99;
+  a {
+    color: lightGrey;
+    &:hover {
+      color: var(--primary-purple);
+    }
+    &.active {
+      animation: blink 1.5s ease-in-out infinite;
+    }
+    &.active:not(.logo)::before {
+      font-family: 'Inconsolata';
+      content: "718:$";
+      position: absolute;
+      left: 2rem;
+      color: var(--primary-purple);
+    }
+  }
+
+  i {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+  }
+}
+
+.menuTest .fas,
+.menuTest a {
+  cursor: pointer;
+}
