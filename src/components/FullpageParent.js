@@ -9,7 +9,6 @@ import 'fullpage.js/vendors/scrolloverflow';
 
 const fullpageOptions = {
 	// callbacks: ['onLeave'],
-	// anchors: ['firstPage', 'secondPage'],
 	// fixedElements: '#fixed',
 	scrollOverflow: true,
 	anchors: ['Main', 'About', 'Services', 'Members', 'Contact'],
@@ -27,14 +26,14 @@ export default class FulpageParent extends React.Component {
 	}
 
 	async componentDidMount() {
-		
+
 		$( "#logo" ).css({width: "100%"}, 1000);
 		$( "#logo-container" ).css({transform: "translate(-50%, -50%)", top:"50%"}, 1000);
 
 		$(window).on('hashchange', function(e){
 			if(this.window.location.hash == "#Main"){
 				$( "#logo" ).animate({width: "100%"}, 1000);
-				$( "#logo-container" ).animate({animation: "fullLogo 2s", top:"50%"}, 1000);		
+				$( "#logo-container" ).animate({animation: "fullLogo 2s", top:"50%"}, 1000);
 			}else{
 				$( "#logo" ).animate({width: "20%"}, 1000);
 				$( "#logo-container" ).animate({animation: "fullLogo 2s", top:"10%"}, 1000);
@@ -55,9 +54,8 @@ export default class FulpageParent extends React.Component {
 		} = this.props.location
 		return(
 			<React.Fragment>
-        <div id="logo-container">
+        <div id="logo-container" style={{ textAlign: 'center'}}>
           <img src={ GIF } id="logo" alt="" />
-						{/* LOGO */}
         </div>
         {/* <div id="landing"></div> */}
         {/* {this.state.loader ?
