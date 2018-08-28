@@ -8,7 +8,7 @@ let api = {
 		return axios.get(url)
 	},
   contactForm: function(data) {
-    let url = baseURL + "contact/"
+    let url = baseURL + "/contact"
     return axios.post(url, data)
   }
 }

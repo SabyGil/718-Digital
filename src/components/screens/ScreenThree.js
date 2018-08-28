@@ -80,15 +80,15 @@ class ThirdScreen extends React.Component {
       <Route path='/:routeId' component={Path}/>
       {/* Links around section box */}
       <div className="nav nav-pills mb-3">
-        <NavLink activeClassName='' to='clients' className="clients nav-link">
+        <NavLink activeClassName='' to='clients#Services' className="clients nav-link">
           Clients
         </NavLink>
-        <Link to='collective'>
+        <Link to='collective#Services'>
           <h2 className="collective nav-link">
             Collective
           </h2>
         </Link>
-        <Link to='consulting'>
+        <Link to='consulting#Services'>
           <h2 className="consultation nav-link">
             Consulting
           </h2>
