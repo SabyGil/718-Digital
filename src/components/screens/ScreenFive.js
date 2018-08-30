@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Consumer } from '../../context';
+import api from '../../utils/api';
 
 class ScreenFive extends React.Component {
 
@@ -49,14 +50,14 @@ class ScreenFive extends React.Component {
       message
     }
 
-    axios.post('https://web-718-digital.herokuapp.com/contact', formEntry)
-    .then(() => console.log(formEntry, 'HERE')
-  )
-    // axios.post(formEntry)
-    // .then(res => dispatch({
-    //   type: 'FORM_ENTRY',
-    //   payload: res.data
-    // }))
+  //   axios.post('https://web-718-digital.herokuapp.com/contact', formEntry)
+  //   .then(() => console.log(formEntry, 'HERE')
+  // )
+    api.contactForm(formEntry)
+    .then(res => dispatch({
+      type: 'FORM_ENTRY',
+      payload: res.data
+    }))
 
 //clear state
     this.setState({

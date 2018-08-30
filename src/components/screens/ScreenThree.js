@@ -45,11 +45,7 @@ class ThirdScreen extends React.Component {
   render() {
     const { content } = this.props.routerProps;
     const { match, location, history } = this.props;
-    console.log(content.projects)
-    // console.log(route.slides[2].testObj)
-    // const {match} = this.props.routerProps;
     const route = routeInfo.find(({heading}) => heading === 'collective');
-    // console.log(route.slides)
     return (
       <div className='view-container' style={{
         'backgroundColor' : 'green'
@@ -102,9 +98,7 @@ class ThirdScreen extends React.Component {
 
 export const ScreenThree = withRouter(ThirdScreen)
 
-export const Path = ({match}) => {
-  // console.log(match,  routeInfo)
-  // console.log(route.slides)
+export const Path = ({ match }) => {
   const route = routeInfo.find(({heading}) => heading === match.params.routeId);
   return (
     <div className='section-box screen-three-content'>
