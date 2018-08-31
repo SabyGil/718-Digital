@@ -1,12 +1,13 @@
 import React from 'react';
-import $ from 'jquery';
-window.$ = window.jQuery = require('jquery');
-const OwlCarousel = require('react-owl-carousel');
-import Modal from 'react-modal';
+// import $ from 'jquery';
+// window.$ = window.jQuery = require('jquery');
+// const OwlCarousel = require('react-owl-carousel');
+// import Modal from 'react-modal';
 // window.jQuery = $;
 // import 'owl.carousel/dist/assets/owl.carousel.css';
 // import 'owl.carousel/dist/assets/owl.theme.default.css';
-// import OwlCarousel from 'react-owl-carousel';
+import OwlCarousel from 'react-owl-carousel';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 export default class TechCarousel extends React.Component {
 	constructor(props) {
@@ -32,7 +33,9 @@ export default class TechCarousel extends React.Component {
 					}
 				}
 			},
-			modalIsOpen: false
+			modalIsOpen: false,
+			modal: false
+
 		};
 		this.toggleMenu = this.toggleMenu.bind(this)
 	}
@@ -61,12 +64,18 @@ export default class TechCarousel extends React.Component {
 		});
 	}
 
+	toggle = () => {
+	this.setState({
+		modal: !this.state.modal
+	});
+}
+
 	render() {
 		const {
 			slides
 		} = this.props
 		// console.log(this.props.match)
-		console.log(this.state.modalIsOpen)
+		// console.log(this.state.modalIsOpen)
 		const items = this.state.options.responsive.items;
 		return(
 			<React.Fragment>
@@ -77,38 +86,26 @@ export default class TechCarousel extends React.Component {
           margin={10}
           // nav
           {...this.state.options}>
-
              {slides.map((content, id) => {
               return (
-	                <div className="item" key={content.id}>
-	                  <p>{content.name}</p>
+                <div className="item" key={content.id}>
+	                <p>{content.name}</p>
+									<Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+								 <Modal isOpen={this.state.modal} toggle={this.toggle}>
+									 <ModalBody>
+									 Lorem ipsum dolor sit amet,
 	                  {/* <p>{content.about}</p>
 	                  <p>{content.client_or_team}</p> */}
-						{/* <button onClick={()=>this.openModal()}>modal btn</button> */}
-						<button type="button" className="btn btn-primary" data-toggle="modal" data-target={`#${content.name}`}>modal btn</button>
-						<div className="modal fade" id={content.name} tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div className="modal-dialog" role="document">
-							<div className="modal-content">
-							<div className="modal-header">
-								<h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div className="modal-body">
-								...
-							</div>
-							<div className="modal-footer">
-								<button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-								<button type="button" className="btn btn-primary">Save changes</button>
-							</div>
-							</div>
-						</div>
-						</div>
-	                </div>
+									{/* <button onClick={()=>this.openModal()}>modal btn</button> */}
+									</ModalBody>
+										 <ModalFooter>
+											 <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
+											 <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+										 </ModalFooter>
+									</Modal>
+                </div>
               )}
             )}
-
         </OwlCarousel>
         : ""}
 				{/* {this.state.modalIsOpen ?
@@ -121,7 +118,27 @@ export default class TechCarousel extends React.Component {
 							<p>{content.client_or_team}</p>
 						</Modal>
 				: null} */}
+				{/* <button type="button" className="btn btn-primary" data-toggle="modal" data-target={`#${content.name}`}>modal btn</button>
 
+				<div className="modal fade" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div className="modal-dialog" role="document">
+					<div className="modal-content">
+					<div className="modal-header">
+						<h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+						<button type="button" className="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div className="modal-body">
+						...
+					</div>
+					<div className="modal-footer">
+						<button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" className="btn btn-primary">Save changes</button>
+					</div>
+					</div>
+				</div>
+				</div> */}
       </React.Fragment>
 		);
 	}

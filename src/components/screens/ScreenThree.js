@@ -47,8 +47,8 @@ class ThirdScreen extends React.Component {
     const { match, location, history } = this.props;
     const route = routeInfo.find(({heading}) => heading === 'collective');
     return (
-      <div className='view-container' style={{
-        'backgroundColor' : 'green'
+      <div className='view-container bg' style={{
+        // 'backgroundColor' : 'green'
       }}>
       {/* if route === /, collective is default */}
       <Route exact path='/' render={() => (
@@ -103,15 +103,31 @@ export const Path = ({ match }) => {
   return (
     <div className='section-box screen-three-content'>
       <div className='three-left__1'>
-        <h1>{route.contentOne}</h1>
         lorem ipsum dipsum
+        eritatis, earum, magnam.
+        lorem ipsum dipsum
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+        lorem ipsum dipsum
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+        <h1>{route.contentTwo}</h1>
+
+        {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+        lorem ipsum dipsum
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+        lorem ipsum dipsum
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam. */}
       </div>
       <div className='three-left__2'>
+        <h1>{route.contentOne}</h1>
         lorem ipsum dipsum
-        <h1>{route.contentTwo}</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+        lorem ipsum dipsum
       </div>
       <div className='three-right'>
         <h1>{route.heading}</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+        lorem ipsum dipsum
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
       </div>
       <div className='three-bottom'>
         <TechCarousel match={match} slides={route.slides}/>

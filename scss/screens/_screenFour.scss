@@ -1,0 +1,19 @@
+/* ScreenFour */
+.section-box.screen-four-content {
+  padding: 2rem;
+}
+
+.user-profiles-container {
+  grid-row: 2 / -1;
+  grid-column: 1 / -1;
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  justify-items: center;
+  align-items: start;
+}
+
+.user-profiles-container i {
+  font-size: 10rem;
+  border: 1px solid red;
+}

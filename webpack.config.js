@@ -8,6 +8,11 @@ module.exports = {
 	entry: {
 		main: ['babel-polyfill', './src/index.js']
 	},
+	externals: {
+		$: 'window.jQuery',
+		jQuery: 'window.jQuery',
+		fullpage: 'window.fullpage'
+	},
 	module: {
 		rules: [{
 				test: /\.(js|jsx)$/,

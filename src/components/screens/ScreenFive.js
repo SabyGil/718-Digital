@@ -78,7 +78,7 @@ class ScreenFive extends React.Component {
             <div className='view-container' style={{'backgroundColor':'maroon'}}>
               <div className="section-box screen-five-content">
                 <div className='contact-heading'>
-                  <h1>Contact</h1>
+                  <h1 className='display-1'>Contact</h1>
                 </div>
                 <div className='five-left'>
                   <form onSubmit={this.onSubmit.bind(this, dispatch)}>
@@ -122,16 +122,6 @@ class ScreenFive extends React.Component {
                          Enter text here...
                      </textarea>
 
-                      {/* <input
-                        type="t"
-                        label='Message'
-                        name='message'
-                        className=''
-                        placeholder='Enter Message'
-                        onChange={this.handleChange}
-                        value={message}
-                        error={errors.message}
-                      /> */}
                     </div>
 
                     <input type="submit" value='Submit' className="btn btn-light btn-block" />
@@ -140,9 +130,22 @@ class ScreenFive extends React.Component {
 
                 </div>
                 <div className='five-right'>
-                    <div className='circle'></div>
-                    <div className='circle'></div>
-                    <div className='circle'></div>
+                    <div className='circle'>
+                      <i className="fab fa-twitter"/>
+                    </div>
+                    <div className='circle'>
+                      <i className="fab fa-google-plus-g"/>
+                    </div>
+                    <div className='circle'>
+                      <i className="fab fa-facebook-square"/>
+                    </div>
+                    {/* <img className="rounded-circle" src="/images/pathToYourImage.png" alt="Circle image"/>
+                    <img className="rounded-circle" src="/images/pathToYourImage.png" alt="Circle image"/>
+                    <img className="rounded-circle" src="/images/pathToYourImage.png" alt="Circle image"/> */}
+                    {/* <div className="rounded-circle">
+                      <i className="fab fa-twitter rounded-circle"></i>
+                    </div> */}
+
                 </div>
               </div>
             </div>
