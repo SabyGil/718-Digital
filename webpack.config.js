@@ -5,9 +5,7 @@ const path = require('path');
 // const webpack = require('webpack');
 
 module.exports = {
-	entry: {
-		main: ['babel-polyfill', './src/index.js']
-	},
+	entry: ["@babel/polyfill", "./src/index.js"],
 	output: {
 		publicPath: '/'
 	},
