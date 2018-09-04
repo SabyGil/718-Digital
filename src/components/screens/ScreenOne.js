@@ -39,6 +39,7 @@ class ScreenOne extends React.Component {
 		render() {
 				return(
 						<div className='view-container'>
+							
         <div id="logo-container">
           {/* <img src={ GIF } id="logo" alt="" /> */}
         </div>

@@ -8,6 +8,9 @@ module.exports = {
 	entry: {
 		main: ['babel-polyfill', './src/index.js']
 	},
+	output: {
+		publicPath: '/'
+	},
 	externals: {
 		$: 'window.jQuery',
 		jQuery: 'window.jQuery',

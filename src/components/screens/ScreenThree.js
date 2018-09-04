@@ -19,7 +19,8 @@ const routeInfo = [
       'slideFour'
 
     ]
-  }, {
+  },
+   {
     id: '2',
     heading: 'consulting',
     contentOne: 'ipsum dipsum mixzum',
@@ -30,7 +31,8 @@ const routeInfo = [
         testObj: 'test'
       }
     ]
-  }, {
+  },
+   {
     id: '3',
     heading: 'clients',
     contentOne: 'ipsum dipsum mixzum',
