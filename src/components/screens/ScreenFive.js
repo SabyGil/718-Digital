@@ -139,19 +139,11 @@ class ScreenFive extends React.Component {
                     <div className='circle'>
                       <i className="fab fa-facebook-square"/>
                     </div>
-                    {/* <img className="rounded-circle" src="/images/pathToYourImage.png" alt="Circle image"/>
-                    <img className="rounded-circle" src="/images/pathToYourImage.png" alt="Circle image"/>
-                    <img className="rounded-circle" src="/images/pathToYourImage.png" alt="Circle image"/> */}
-                    {/* <div className="rounded-circle">
-                      <i className="fab fa-twitter rounded-circle"></i>
-                    </div> */}
-
                 </div>
               </div>
             </div>
           )
         }
-
         }
       </Consumer>
     )

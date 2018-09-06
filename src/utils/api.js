@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'https://web-718-digital.herokuapp.com';
+const baseURL = 'https://cors-anywhere.herokuapp.com/https://web-718-digital.herokuapp.com';
 
 let api = {
   getContent: function(){

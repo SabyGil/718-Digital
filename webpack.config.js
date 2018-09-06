@@ -9,11 +9,6 @@ module.exports = {
 	output: {
 		publicPath: '/'
 	},
-	externals: {
-		$: 'window.jQuery',
-		jQuery: 'window.jQuery',
-		fullpage: 'window.fullpage'
-	},
 	module: {
 		rules: [{
 				test: /\.(js|jsx)$/,
@@ -33,22 +28,25 @@ module.exports = {
 					}
 				}]
 			},
-			{
-		    test: /\.(png|jpg|gif|svg)$/,
-		    exclude: [
-		      path.resolve(__dirname, './node_modules'),
-		    ],
-		    use: {
-		      loader: 'file-loader',
-		      options: {
-		        name: '[path][name]-[hash].[ext]',
-		        // outputPath: '../',
-		        // publicPath: '/dist',
-		      },
-		    },
-		  },
+			// {
+		  //   test: /\.(png|jpg|gif|svg)$/,
+		  //   exclude: [
+		  //     path.resolve(__dirname, './node_modules'),
+		  //   ],
+		  //   use: {
+		  //     loader: 'file-loader',
+		  //     options: {
+		  //       name: '[path][name]-[hash].[ext]',
+		  //       // outputPath: '../',
+		  //       // publicPath: '/dist',
+		  //     },
+		  //   },
+		  // },
 			// {
 			// 	test: /\.(mov|mp4)$/,
+			// 	exclude: [
+			// 	 path.resolve(__dirname, './node_modules'),
+			//  ],
 			// 	use: [{
 			// 		loader: 'url-loader',
 			// 		options: {
@@ -56,16 +54,17 @@ module.exports = {
 			// 		}
 			// 	}]
 			// },
-			// {
-			// 	test: /\.(png|jpg|gif)$/,
-			// 	use: [{
-			// 		loader: 'file-loader',
-			// 		options: {
-			// 			name: '[path][name].[ext]',
-			// 			publicPath: '..' // use relative urls
-			// 		}
-			// 	}]
-			// },
+			{
+         test: /\.(png|jpg|jpeg|gif|svg|pdf|mov|mp4)$/,
+				 exclude: [
+					 path.resolve(__dirname, './node_modules'),
+				 ],
+         loader: "url-loader",
+         options: {
+					 name: '[name].[ext]',
+           limit: 10000
+         }
+       },
 			{
 				test: /\.s?[ac]ss$/,
 				use: [
@@ -94,10 +93,5 @@ module.exports = {
 			filename: "[name]-[contenthash:8].css"
 		}),
 		new CleanWebpackPlugin(['dist']),
-		// new webpack.ProvidePlugin({
-		// 	$: 'jquery',
-		// 	jQuery: 'jquery',
-		// 	'window.jQuery': 'jquery'
-		// }),
 	]
 };

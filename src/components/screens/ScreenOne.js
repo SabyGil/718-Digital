@@ -37,12 +37,11 @@ class ScreenOne extends React.Component {
 		// }
 
 		render() {
-				return(
-						<div className='view-container'>
-							
-        <div id="logo-container">
-          {/* <img src={ GIF } id="logo" alt="" /> */}
-        </div>
+			return(
+				<div className='view-container'>
+	        <div id="logo-container">
+	          {/* <img src={ GIF } id="logo" alt="" /> */}
+	        </div>
         <div className="header-unit" style={{'height':'100vh'}} id="landing">
         {/* <div className="header-unit" style={{'height':'100vh'}}> */}
           <div id="video-container">

@@ -1,4 +1,5 @@
 import React from 'react';
+import Clock from './Clock';
 
 class Menu extends React.Component {
 	constructor(props) {
@@ -31,7 +32,7 @@ class Menu extends React.Component {
             {isOpen ?
               <div className='menu-list'>
                 <i className="fas fa-times" onClick={ this.toggleMenu}></i>
-
+								<Clock />
               {navLinks.map((link, i) => {
                   return (
                     <li key={i}>

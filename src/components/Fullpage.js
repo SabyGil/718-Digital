@@ -34,7 +34,7 @@ const FullpageWrapper = fullpageProps => (
             </a>
           </div>
           <div className="section">
-            <ScreenThree routerProps={fullpageProps}/>
+            <ScreenThree routerProps={fullpageProps}	/>
             <a onClick={() => fullpageApi.moveSectionDown()} className='section-scroll-arrow'>
               <i className="fas fa-chevron-down"></i>
             </a>

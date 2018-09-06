@@ -17,7 +17,6 @@ const routeInfo = [
       'slideFour',
       'slideThree',
       'slideFour'
-
     ]
   },
    {
@@ -28,16 +27,30 @@ const routeInfo = [
     slides: [
       'slideOne',
       'slideTwo', {
-        testObj: 'test'
-      }
+        testObj: 'default'
+      },
+      'slideThree',
+      // 'slideFour',
+      // 'slideThree',
+      // 'slideFour'
     ]
   },
-   {
-    id: '3',
-    heading: 'clients',
-    contentOne: 'ipsum dipsum mixzum',
-    contentTwo: 'fipsum wixzum nixsum'
-  }
+  {
+   id: '3',
+   heading: 'clients',
+   contentOne: 'ipsum dipsum mixzum',
+   contentTwo: 'fipsum wixzum nixsum',
+   slides: [
+     'slideOne',
+     'slideTwo', {
+       testObj: 'default'
+     },
+     'slideThree',
+     // 'slideFour',
+     // 'slideThree',
+     // 'slideFour'
+   ]
+ },
 ];
 
 class ThirdScreen extends React.Component {
@@ -50,51 +63,50 @@ class ThirdScreen extends React.Component {
     const route = routeInfo.find(({heading}) => heading === 'collective');
     return (
       <div className='view-container bg' style={{
-        // 'backgroundColor' : 'green'
-      }}>
-      {/* if route === /, collective is default */}
-      <Route exact path='/' render={() => (
-        <div className='section-box screen-three-content'>
-          <div className='three-left__1'>
-            <h1>{route.contentOne}</h1>
-            lorem ipsum dipsum
+          // 'backgroundColor' : 'green'
+        }}>
+        {/* if route === /, collective is default */}
+        <Route exact path='/' render={() => (
+          <div className='section-box screen-three-content'>
+            <div className='three-left__1'>
+              <h1>{route.contentOne}</h1>
+              lorem ipsum dipsum
+            </div>
+            <div className='three-left__2'>
+              lorem ipsum dipsum
+              <h1>{route.contentTwo}</h1>
+            </div>
+            <div className='three-right'>
+              <h1>{route.heading}</h1>
+            </div>
+            <div className='three-bottom'>
+              {/* <TechCarousel match={match} slides={content.projects || []} /> */}
+              <TechCarousel match={match} slides={route.slides || []} />
+            </div>
           </div>
-          <div className='three-left__2'>
-            lorem ipsum dipsum
-            <h1>{route.contentTwo}</h1>
-          </div>
-          <div className='three-right'>
-            <h1>{route.heading}</h1>
-          </div>
-          <div className='three-bottom'>
-            <TechCarousel match={match} slides={content.projects || []} />
-            {/* <TechCarousel match={match} slides={route.slides || []} /> */}
-          </div>
+        )
+      }/>
+          {/* otherwise render nested paths */}
+
+        <Route path='/:routeId' component={Path}/>
+        {/* Links around section box */}
+        <div className="nav nav-pills mb-3">
+          <NavLink activeClassName='' to='clients#Services' className="clients nav-link">
+            Clients
+          </NavLink>
+          <Link to='collective#Services'>
+            <h2 className="collective nav-link">
+              Collective
+            </h2>
+          </Link>
+          <Link to='consulting#Services'>
+            <h2 className="consultation nav-link">
+              Consulting
+            </h2>
+          </Link>
         </div>
-      )
-    }/>
-        {/* otherwise render nested paths */}
-
-      <Route path='/:routeId' component={Path}/>
-      {/* Links around section box */}
-      <div className="nav nav-pills mb-3">
-        <NavLink activeClassName='' to='clients#Services' className="clients nav-link">
-          Clients
-        </NavLink>
-        <Link to='collective#Services'>
-          <h2 className="collective nav-link">
-            Collective
-          </h2>
-        </Link>
-        <Link to='consulting#Services'>
-          <h2 className="consultation nav-link">
-            Consulting
-          </h2>
-        </Link>
       </div>
-
-    </div>
-  );
+    );
   }
 }
 
@@ -103,7 +115,12 @@ export const ScreenThree = withRouter(ThirdScreen)
 export const Path = ({ match }) => {
   const route = routeInfo.find(({heading}) => heading === match.params.routeId);
   return (
-    <div className='section-box screen-three-content'>
+    <div className='section-box screen-three-content normal-scroll'
+      // style={{
+      //   overflow: "scroll",
+      // }}
+      >
+
       <div className='three-left__1'>
         lorem ipsum dipsum
         eritatis, earum, magnam.
@@ -131,6 +148,13 @@ export const Path = ({ match }) => {
         lorem ipsum dipsum
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
       </div>
+      {/* <ul>
+        {Array(50)
+          .fill(1)
+          .map((_, index) => <li>{index}</li>)}
+      </ul> */}
+      {/* PS: Once you edit code - this will be scrollable, but full page
+      will die. */}
       <div className='three-bottom'>
         <TechCarousel match={match} slides={route.slides}/>
       </div>

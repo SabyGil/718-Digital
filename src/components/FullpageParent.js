@@ -8,12 +8,13 @@ import GIF from '../imgs/test.gif';
 import 'fullpage.js/vendors/scrolloverflow';
 
 const fullpageOptions = {
-	// callbacks: ['onLeave'],
+	callbacks: ['onLeave'],
 	// fixedElements: '#fixed',
 	scrollOverflow: true,
 	anchors: ['Main', 'About', 'Services', 'Members', 'Contact'],
 	navigation: true,
 	controlArrows: true,
+	normalScrollElements: ".normal-scroll"
 };
 
 export default class FulpageParent extends React.Component {
