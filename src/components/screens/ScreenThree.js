@@ -1,6 +1,7 @@
 import React from 'react';
 import TechCarousel from '../TechCarousel';
 import {Route, Link, NavLink, withRouter} from 'react-router-dom';
+// import 'simplebar/dist/simplebar.css';
 
 const routeInfo = [
   {
@@ -67,19 +68,19 @@ class ThirdScreen extends React.Component {
         }}>
         {/* if route === /, collective is default */}
         <Route exact path='/' render={() => (
-          <div className='section-box screen-three-content'>
-            <div className='three-left__1'>
+          <div className='section-box screen-three'>
+            <div className='screen-three__img'>
               <h1>{route.contentOne}</h1>
               lorem ipsum dipsum
             </div>
-            <div className='three-left__2'>
+            <div className='screen-three__aside'>
               lorem ipsum dipsum
               <h1>{route.contentTwo}</h1>
             </div>
-            <div className='three-right'>
+            <div className='screen-three__content'>
               <h1>{route.heading}</h1>
             </div>
-            <div className='three-bottom'>
+            <div className='screen-three__projects-container'>
               {/* <TechCarousel match={match} slides={content.projects || []} /> */}
               <TechCarousel match={match} slides={route.slides || []} />
             </div>
@@ -115,13 +116,8 @@ export const ScreenThree = withRouter(ThirdScreen)
 export const Path = ({ match }) => {
   const route = routeInfo.find(({heading}) => heading === match.params.routeId);
   return (
-    <div className='section-box screen-three-content normal-scroll'
-      // style={{
-      //   overflow: "scroll",
-      // }}
-      >
-
-      <div className='three-left__1'>
+    <div className='section-box screen-three normal-scroll'>
+      <div className='screen-three__img'>
         lorem ipsum dipsum
         eritatis, earum, magnam.
         lorem ipsum dipsum
@@ -130,32 +126,26 @@ export const Path = ({ match }) => {
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
         <h1>{route.contentTwo}</h1>
 
-        {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
-        lorem ipsum dipsum
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
-        lorem ipsum dipsum
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam. */}
-      </div>
-      <div className='three-left__2'>
-        <h1>{route.contentOne}</h1>
-        lorem ipsum dipsum
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
-        lorem ipsum dipsum
-      </div>
-      <div className='three-right'>
-        <h1>{route.heading}</h1>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
-        lorem ipsum dipsum
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
-      </div>
-      {/* <ul>
-        {Array(50)
-          .fill(1)
-          .map((_, index) => <li>{index}</li>)}
-      </ul> */}
-      {/* PS: Once you edit code - this will be scrollable, but full page
-      will die. */}
-      <div className='three-bottom'>
+      {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+      lorem ipsum dipsum
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+      lorem ipsum dipsum
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam. */}
+    </div>
+    <div className='screen-three__aside'>
+      <h1>{route.contentOne}</h1>
+      lorem ipsum dipsum
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+      lorem ipsum dipsum
+    </div>
+    <div className='screen-three__content'>
+      <h1>{route.heading}</h1>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+      lorem ipsum dipsum
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+    </div>
+
+      <div className='screen-three__projects-container'>
         <TechCarousel match={match} slides={route.slides}/>
       </div>
     </div>

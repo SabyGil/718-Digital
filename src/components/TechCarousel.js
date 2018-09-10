@@ -7,53 +7,14 @@ import Modal from 'react-modal';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 
+import { Consumer } from '../context';
+
 export default class TechCarousel extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			modalIsOpen: false,
-			modal: false
-		}
-	}
-	// componentDidMount(){
-	// 	window.jQuery = $;
-	// }
-	// openModal = () => {
-	// 	this.setState(()=>{
-	// 		return {
-	// 			modalIsOpen: true
-	// 		}
-	// 	})
-	// }
-	//
-	// closeModal = () => {
-	// 	this.setState(()=>{
-	// 		return {
-	// 			modalIsOpen: false
-	// 		}
-	// 	})
-	// }
-
-	toggleMenu = () => {
-		this.setState({
-			modalIsOpen: !this.state.modalIsOpen
-		});
-	}
-
-	toggle = () => {
-	this.setState({
-		modal: !this.state.modal
-	});
-}
 
 	render() {
 		const {
 			slides
 		} = this.props
-		// console.log(this.props.match)
-		// console.log(this.state.modalIsOpen)
-		// const items = this.state.options.responsive.items;
-
 		const settings = {
 		dots: true,
 		infinite: true,
@@ -61,36 +22,70 @@ export default class TechCarousel extends React.Component {
 		slidesToShow: 3,
 		slidesToScroll: 1
 	};
-		return(
-			<React.Fragment>
-        {/* {slides.length > 0 ? */}
-					<Slider {...settings}>
+		return (
+			<Consumer>
+				{value => {
+					const { dispatch, modalIsOpen } = value;
+					return (
+						<React.Fragment>
+								<Slider {...settings}>
+									 {slides.map((content, id) => {
+										return (
+											<div className="item " key={content.id}>
+												<p>{content.name}</p>
+												<Button color="danger" onClick={()=>dispatch({ type:"OPEN_MODAL" })}>BUTTON</Button>
+													<Modal
+														className='tech-modal'
+														isOpen={modalIsOpen}
+														onRequestClose={()=>dispatch({type:"CLOSE_MODAL"})}
+														overlayClassName='overlay'
+														>
+															<div className="modal-outline">
+																<div className='modal-title'>PROJECT</div>
 
-             {slides.map((content, id) => {
-              return (
-                <div className="item " key={content.id}>
-	                <p>{content.name}</p>
-									<Button color="danger" onClick={this.toggleMenu}>BUTTON</Button>
-									{this.state.modalIsOpen ?
-											<Modal
-												className='tech-modal'
-													isOpen={this.state.modalIsOpen}
-													onRequestClose={this.toggleMenu}
-													overlayClassName='overlay'
-													>
-													<button onClick={this.toggleMenu}>modal btn</button>
-													Hello world
-													{'some modal content'}
-												<p>{content.client_or_team}</p>
-											</Modal>
-									: null}
-                </div>
-              )}
-            )}
-        </Slider>
+																<div>
+																	<div className="project">Project</div>
 
-      </React.Fragment>
-		);
+																</div>
+
+																<div className='project-description'>
+																	<button onClick={()=>dispatch({type:"CLOSE_MODAL"})} className='modal-close-btn'>modal btn</button>
+																	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut magnam expedita, quisquam similique. Hic doloremque suscipit cupiditate assumenda illum! Aliquid.
+																	{'some modal content'}
+																</div>
+
+																<div className='client' >
+																		<div className="">
+																			Client
+																		</div>
+																		<div className="b">
+																			img
+																		</div>
+																</div>
+
+																<div className='tech'>
+																	<div className="">
+																		TECH
+																	</div>
+																	<div className="">
+																		two
+																		<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png' height='100px'/>
+																		{/* loop tech used */}
+																	</div>
+																</div>
+
+															{/* <p>{content.client_or_team}</p> */}
+														</div>
+													</Modal>
+											</div>
+										)}
+									)}
+							</Slider>
+						</React.Fragment>
+					)
+				}}
+			</Consumer>
+		)
 	}
 }
 

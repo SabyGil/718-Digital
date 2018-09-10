@@ -76,11 +76,11 @@ class ScreenFive extends React.Component {
           const { dispatch } = value;
           return (
             <div className='view-container' style={{'backgroundColor':'maroon'}}>
-              <div className="section-box screen-five-content">
-                <div className='contact-heading'>
+              <div className="section-box screen-five">
+                <div className='screen-five__contact-heading'>
                   <h1 className='display-1'>Contact</h1>
                 </div>
-                <div className='five-left'>
+                <div className='screen-five__contact-form'>
                   <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                   {/* <form> */}
                     <div className="form-group">
@@ -129,7 +129,7 @@ class ScreenFive extends React.Component {
                   </form>
 
                 </div>
-                <div className='five-right'>
+                <div className='screen-five__social-media'>
                     <div className='circle'>
                       <i className="fab fa-twitter"/>
                     </div>

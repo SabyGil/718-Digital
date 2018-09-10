@@ -42,6 +42,20 @@ module.exports = {
 		  //     },
 		  //   },
 		  // },
+			{
+				test: /\.(png|jpg|jpeg|gif|svg|pdf)$/,
+		    exclude: [
+		      path.resolve(__dirname, './node_modules'),
+		    ],
+		    use: {
+		      loader: 'file-loader',
+		      options: {
+		        name: '[path][name]-[hash].[ext]',
+		        // outputPath: '../',
+		        // publicPath: '/dist',
+		      },
+		    },
+		  },
 			// {
 			// 	test: /\.(mov|mp4)$/,
 			// 	exclude: [
@@ -55,14 +69,14 @@ module.exports = {
 			// 	}]
 			// },
 			{
-         test: /\.(png|jpg|jpeg|gif|svg|pdf|mov|mp4)$/,
-				 exclude: [
-					 path.resolve(__dirname, './node_modules'),
-				 ],
+         test: /\.(mov|mp4)$/,
+				 // exclude: [
+					//  path.resolve(__dirname, './node_modules'),
+				 // ],
          loader: "url-loader",
          options: {
-					 name: '[name].[ext]',
-           limit: 10000
+					 // name: '[name].[ext]',
+           // limit: 10000
          }
        },
 			{
