@@ -4,9 +4,9 @@ class ScreenTwo extends React.Component {
 
   render() {
     return (
-      <div id='main' className='view-container scroll-bar-wrap' style={{'backgroundColor':'blue'}}>
-        <div className="section-box screen-two">
-
+      <div id='main' className='view-container' style={{'backgroundColor':'blue'}}>
+        <div className="section-box screen-two scroll-bar-wrap normal-scroll">
+          {/* <div class="force-overflow"></div> */}
           <h3 className='screen-two__title'>lorem ipsum lorem ipsum dipsum lorem ipsum lorem ipsum dipsum
             lorem ipsum lorem ipsum dipsum  dipsum lorem ipsum lorem ipsum dipsum
           </h3>

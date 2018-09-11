@@ -49,8 +49,12 @@ export default class TechCarousel extends React.Component {
 																</div>
 
 																<div className='project-description'>
-																	<button onClick={()=>dispatch({type:"CLOSE_MODAL"})} className='modal-close-btn'>modal btn</button>
-																	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut magnam expedita, quisquam similique. Hic doloremque suscipit cupiditate assumenda illum! Aliquid.
+																	<button onClick={()=>dispatch({type:"CLOSE_MODAL"})} className='modal-close-btn'>
+																		  <i className="fas fa-times" />
+																	</button>
+																	<p className="lead display-3">
+																		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut magnam expedita, quisquam similique. Hic doloremque suscipit cupiditate assumenda illum! Aliquid.
+																	</p>
 																	{'some modal content'}
 																</div>
 
@@ -59,7 +63,7 @@ export default class TechCarousel extends React.Component {
 																			Client
 																		</div>
 																		<div className="b">
-																			img
+																				<img src="https://images.unsplash.com/photo-1518709911915-712d5fd04677?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=79ddcb77f12424c3e6f1923670b3a8df&auto=format&fit=crop&w=634&q=80" alt=""/>
 																		</div>
 																</div>
 
@@ -68,8 +72,16 @@ export default class TechCarousel extends React.Component {
 																		TECH
 																	</div>
 																	<div className="">
-																		two
+																		{/* <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png' height='100px'/> */}
 																		<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png' height='100px'/>
+																		<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png' height='100px'/>
+																		<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png' height='100px'/>
+																		<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png' height='100px'/>
+																		<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png' height='100px'/>
+																		<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png' height='100px'/>
+																		<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png' height='100px'/>
+																		<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png' height='100px'/>
+																		{/* <img className="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" alt="Thumbnail image" height='100px'/> */}
 																		{/* loop tech used */}
 																	</div>
 																</div>

@@ -1,4 +1,6 @@
 .screen-five {
+  overflow: auto;
+
   &__contact-heading {
     grid-row: 2 / 3;
     grid-column: 1 / -1;
@@ -13,6 +15,18 @@
     justify-content: center;
     align-items: center;
     border-right: 5px solid white;
+
+    .form-group {
+      label {
+        color: white;
+        font-weight: 700;
+      }
+    }
+
+    .btn {
+      color: white;
+      font-size: 2rem;
+    }
   }
 
   &__social-media {

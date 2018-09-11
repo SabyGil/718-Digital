@@ -75,7 +75,7 @@ class ScreenFive extends React.Component {
         {value => {
           const { dispatch } = value;
           return (
-            <div className='view-container' style={{'backgroundColor':'maroon'}}>
+            <div className='view-container' style={{'backgroundColor':'#777'}}>
               <div className="section-box screen-five">
                 <div className='screen-five__contact-heading'>
                   <h1 className='display-1'>Contact</h1>
@@ -84,12 +84,13 @@ class ScreenFive extends React.Component {
                   <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                   {/* <form> */}
                     <div className="form-group">
+                      <label htmlFor="name" className='d-block'>Name:</label>
                       <input
                         type="text"
                         label='Name'
                         name='name'
-                        className=''
-                        placeholder='Enter Name'
+                        className='form-control'
+                        placeholder='John Smith'
                         onChange={this.onChange}
                         value={name}
                         error={errors.name}
@@ -97,11 +98,12 @@ class ScreenFive extends React.Component {
                     </div>
                     {/*  */}
                     <div className="form-group">
+                      <label htmlFor="email" className='d-block'>Email:</label>
                       <input
                         type="email"
                         label='Email'
                         name='email'
-                        className=''
+                        className='form-control'
                         placeholder='Enter Email'
                         onChange={this.onChange}
                         value={email}
@@ -110,10 +112,11 @@ class ScreenFive extends React.Component {
                     </div>
                     {/*  */}
                     <div className="form-group">
+                      <label htmlFor="message" className='d-block label-light'>Message:</label>
                       <textarea
                         label='Message'
                         name='message'
-                        className=''
+                        className='form-control'
                         placeholder='Enter Message'
                         onChange={this.onChange}
                         value={message}
@@ -124,7 +127,7 @@ class ScreenFive extends React.Component {
 
                     </div>
 
-                    <input type="submit" value='Submit' className="btn btn-light btn-block" />
+                    <input type="submit" value='Submit' className="btn btn-block p-3 --purple" />
 
                   </form>
 
