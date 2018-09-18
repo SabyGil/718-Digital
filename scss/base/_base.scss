@@ -57,8 +57,9 @@ ul {
   border: 2px solid white;
   box-shadow: inset 0 0 1.5rem white, 0 0 1.5rem white;
   font-size: 2rem;
-  height: 65%;
-  top: 20%;
+  // height: 65%;
+  height: 100%;
+  // top: 20%;
   position: inherit;
   width: 80%;
   left: 10%;
@@ -185,6 +186,68 @@ ul {
     grid-template-areas: 'title title''img info' 'client tech';
   }
 }
+//--Transition Group styles
+// .cover {
+//   background: black;
+//   animation: color-me-in 5s;
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   top: 0;
+//   bottom: 0;
+//   // z-index: 99;
+// }
+// @keyframes color-me-in {
+//   /* You could think of as "step 1" */
+//   0% {
+//     // background: orange;
+//     .fade-appear,
+//     .fade-enter {
+//       opacity: 0;
+//       background-color: green;
+//       z-index: 99;
+//     }
+//   }
+//
+//   25% {
+//
+//   }
+//   /* You could think of as "step 2" */
+//   100% {
+//     background: black;
+//   }
+// }
+
+.fade-appear,
+.fade-enter {
+  opacity: 0;
+  // background-color: green;
+  z-index: 99;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  // background-color: blue;
+  transition: opacity 1000ms ease-in-out;
+  // position: absolute;
+  // transition: background-color 5000ms linear;
+  // border: 5px solid red;
+  // left: 0;
+  // right: 0;
+  // top: 0;
+  // bottom: 0;
+}
+
+.fade-exit {
+  opacity: 1;
+  // background-color: red;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
+}
+//--
 
 .scroll-bar-wrap {
   // background-color: #F5F5F5;

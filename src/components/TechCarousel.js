@@ -4,8 +4,8 @@ import Slider from "react-slick";
 // import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Button,  ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Modal from 'react-modal';
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import { Consumer } from '../context';
 
@@ -19,20 +19,29 @@ export default class TechCarousel extends React.Component {
 		dots: true,
 		infinite: true,
 		speed: 500,
-		slidesToShow: 3,
-		slidesToScroll: 1
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		className: 'testing',
+		// adaptiveHeight: true,
+		arrows: true
 	};
 		return (
 			<Consumer>
 				{value => {
 					const { dispatch, modalIsOpen } = value;
+					const { projects } = value.content;
+					// console.log(projects, 'here')
+
 					return (
 						<React.Fragment>
+							{projects &&
 								<Slider {...settings}>
-									 {slides.map((content, id) => {
+									 {projects.map((content, id) => {
+									 console.log(content, 'slider')
 										return (
 											<div className="item " key={content.id}>
 												<p>{content.name}</p>
+
 												<Button color="danger" onClick={()=>dispatch({ type:"OPEN_MODAL" })}>BUTTON</Button>
 													<Modal
 														className='tech-modal'
@@ -45,12 +54,13 @@ export default class TechCarousel extends React.Component {
 
 																<div>
 																	<div className="project">Project</div>
+																	<p>{content.client_or_team}</p>
 
 																</div>
 
 																<div className='project-description'>
 																	<button onClick={()=>dispatch({type:"CLOSE_MODAL"})} className='modal-close-btn'>
-																		  <i className="fas fa-times" />
+																			<i className="fas fa-times" />
 																	</button>
 																	<p className="lead display-3">
 																		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut magnam expedita, quisquam similique. Hic doloremque suscipit cupiditate assumenda illum! Aliquid.
@@ -93,6 +103,8 @@ export default class TechCarousel extends React.Component {
 										)}
 									)}
 							</Slider>
+							}
+
 						</React.Fragment>
 					)
 				}}

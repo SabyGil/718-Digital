@@ -28,57 +28,32 @@ module.exports = {
 					}
 				}]
 			},
-			// {
-		  //   test: /\.(png|jpg|gif|svg)$/,
-		  //   exclude: [
-		  //     path.resolve(__dirname, './node_modules'),
-		  //   ],
-		  //   use: {
-		  //     loader: 'file-loader',
-		  //     options: {
-		  //       name: '[path][name]-[hash].[ext]',
-		  //       // outputPath: '../',
-		  //       // publicPath: '/dist',
-		  //     },
-		  //   },
-		  // },
 			{
-				test: /\.(png|jpg|jpeg|gif|svg|pdf)$/,
-		    exclude: [
-		      path.resolve(__dirname, './node_modules'),
-		    ],
-		    use: {
+				test: /\.(png|jpg|jpeg|gif|pdf|woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+				// /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/
+		    use: [{
 		      loader: 'file-loader',
 		      options: {
-		        name: '[path][name]-[hash].[ext]',
-		        // outputPath: '../',
-		        // publicPath: '/dist',
+		        name: '[path][name].[ext]'
 		      },
-		    },
+		    }],
 		  },
 			// {
-			// 	test: /\.(mov|mp4)$/,
-			// 	exclude: [
-			// 	 path.resolve(__dirname, './node_modules'),
-			//  ],
-			// 	use: [{
-			// 		loader: 'url-loader',
-			// 		options: {
-			// 			name: '[name].[ext]'
-			// 		}
-			// 	}]
+			//  test: /\.mp4$/,
+			//  use: 'file-loader?name=videos/[name].[ext]',
 			// },
 			{
-         test: /\.(mov|mp4)$/,
-				 // exclude: [
-					//  path.resolve(__dirname, './node_modules'),
-				 // ],
-         loader: "url-loader",
-         options: {
-					 // name: '[name].[ext]',
-           // limit: 10000
-         }
-       },
+				test: /\.(mov|mp4)$/,
+				exclude: [
+				 path.resolve(__dirname, './node_modules'),
+			 ],
+				use: [{
+					loader: 'url-loader',
+					options: {
+						name: '[name].[ext]'
+					}
+				}]
+			},
 			{
 				test: /\.s?[ac]ss$/,
 				use: [

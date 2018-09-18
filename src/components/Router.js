@@ -3,7 +3,6 @@ import {
 	Route,
 	BrowserRouter as Router
 } from 'react-router-dom';
-// import FullpageWrapper from './Fullpage';
 import FullpageParent from './FullpageParent';
 import { Provider } from '../context';
 

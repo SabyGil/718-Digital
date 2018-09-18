@@ -12,9 +12,10 @@ class ScreenOne extends React.Component {
         <div className="header-unit" style={{'height':'100vh'}} id="landing">
         {/* <div className="header-unit" style={{'height':'100vh'}}> */}
           <div id="video-container">
-            <video autoPlay loop mute='true' className="fillWidth">
+            <video loop autoPlay  className="fillWidth">
                 {/* <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4"/> */}
-                <source src="https://videos.pond5.com/spray-graffiti-art-making-spray-footage-047584428_main_xl.mp4" type="video/mp4"/>
+                {/* <source src="https://videos.pond5.com/spray-graffiti-art-making-spray-footage-047584428_main_xl.mp4" type="video/mp4"/> */}
+								<source src={'https://pixabay.com/en/videos/download/video-6395_medium.mp4'} type="video/mp4" />
             </video>
             {/* <video autoPlay loop mute='true' className="fillWidth">
                 <source src="https://pixabay.com/en/videos/download/video-7269_medium.mp4" type="video/mp4"/>

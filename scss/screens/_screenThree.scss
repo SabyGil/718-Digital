@@ -93,8 +93,8 @@
     .slick-initialized .slick-slide {
       display: flex;
       justify-content: center;
-      border: 5px solid blue;
-      // width: 30rem !important;
+      // border: 5px solid blue;
+      width: 30rem !important;
     }
 
     .item {
@@ -104,8 +104,13 @@
       height: 20rem;
       width: 20rem !important;
       align-items: center;
-      // padding: 6rem;
       justify-content: center;
+      padding: 6rem;
+    }
+
+    .testing {
+      border: 2px solid red;
+      // display: flex;
     }
   }
 }
@@ -151,6 +156,11 @@ $primary-color: rgba(0,0,0, .5);
   color: #fff;
   border: none;
 }
+// .slick-list {
+//   .slick-track {
+//     width: auto !important;
+//   }
+// }
 
 .overlay {
   position: fixed;

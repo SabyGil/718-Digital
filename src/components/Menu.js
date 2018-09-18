@@ -2,15 +2,11 @@ import React from 'react';
 import Clock from './Clock';
 
 class Menu extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			isOpen: false,
-		}
-		this.toggleMenu = this.toggleMenu.bind(this);
+	state = {
+		isOpen: false
 	}
 
-	toggleMenu() {
+	toggleMenu = () => {
 		this.setState(e => ({
 			isOpen: !e.isOpen
 		}));
@@ -31,7 +27,7 @@ class Menu extends React.Component {
           <ul>
             {isOpen ?
               <div className='menu-list'>
-                <i className="fas fa-times" onClick={ this.toggleMenu}></i>
+                <i className="fas fa-times" onClick={ this.toggleMenu}/>
 								<Clock />
               {navLinks.map((link, i) => {
                   return (
@@ -43,7 +39,7 @@ class Menu extends React.Component {
               }
             	</div>
               :
-              <i className="fas fa-terminal" onClick={this.toggleMenu}></i>
+              <i className="fas fa-terminal" onClick={this.toggleMenu}/>
             }
           </ul>
         </nav>

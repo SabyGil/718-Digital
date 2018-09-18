@@ -1,7 +1,9 @@
 import React from 'react';
 import TechCarousel from '../TechCarousel';
-import {Route, Link, NavLink, withRouter} from 'react-router-dom';
+import {Route, Link, NavLink, Redirect, withRouter, Switch} from 'react-router-dom';
 // import 'simplebar/dist/simplebar.css';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { Consumer } from '../../context';
 
 const routeInfo = [
   {
@@ -55,41 +57,31 @@ const routeInfo = [
 ];
 
 class ThirdScreen extends React.Component {
-  state = {
-
-  }
   render() {
-    const { content } = this.props.routerProps;
-    const { match, location, history } = this.props;
+    const { location } = this.props;
     const route = routeInfo.find(({heading}) => heading === 'collective');
+    // TODO: render a component called background
     return (
-      <div className='view-container bg' style={{
-          // 'backgroundColor' : 'green'
-        }}>
+      <div className='view-container bg'>
         {/* if route === /, collective is default */}
         <Route exact path='/' render={() => (
-          <div className='section-box screen-three'>
-            <div className='screen-three__img'>
-              <h1>{route.contentOne}</h1>
-              lorem ipsum dipsum
-            </div>
-            <div className='screen-three__aside'>
-              lorem ipsum dipsum
-              <h1>{route.contentTwo}</h1>
-            </div>
-            <div className='screen-three__content'>
-              <h1>{route.heading}</h1>
-            </div>
-            <div className='screen-three__projects-container'>
-              {/* <TechCarousel match={match} slides={content.projects || []} /> */}
-              <TechCarousel match={match} slides={route.slides || []} />
-            </div>
-          </div>
-        )
-      }/>
+          <Redirect to='/collective'/>
+        )}/>
           {/* otherwise render nested paths */}
 
-        <Route path='/:routeId' component={Path}/>
+    {/* <div className="cover"> */}
+        <TransitionGroup component={null}>
+          <CSSTransition
+              key={location.key}
+              timeout={1000}
+              classNames='fade'
+            >
+                <Route path='/:routeId' component={Path}/>
+                {/* <Route exact={true} path='/:r/:g/:b' component={Test}/> */}
+          </CSSTransition>
+        </TransitionGroup>
+      {/* </div> */}
+
         {/* Links around section box */}
         <div className="nav nav-pills mb-3">
           <NavLink activeClassName='' to='clients#Services' className="clients nav-link">
@@ -113,7 +105,7 @@ class ThirdScreen extends React.Component {
 
 export const ScreenThree = withRouter(ThirdScreen)
 
-export const Path = ({ match }) => {
+const Path = ({ match }) => {
   const route = routeInfo.find(({heading}) => heading === match.params.routeId);
   return (
     <div className='section-box screen-three normal-scroll'>
@@ -146,8 +138,40 @@ export const Path = ({ match }) => {
     </div>
 
       <div className='screen-three__projects-container'>
-        <TechCarousel match={match} slides={route.slides}/>
+        {/* <TechCarousel match={match} slides={route.slides}/> */}
+         {/* <TechCarousel match={match} slides={route.slides || []} /> */}
+         <TechCarousel />
+         {/* <TechCarousel match={match} /> */}
+
       </div>
     </div>
-  );
+  )
+}
+// RGB
+const Test = ({ match }) => {
+  const { params } = match;
+  return (
+    <div style={{
+      ...styles.rgb,
+      // background: `rgb(${params.r}, ${params.g}, ${params.b})`
+      background: `#e0115f`
+    }}>
+      {/* rgb({params.r}, {params.g}, {params.b}) */}
+    </div>
+  )
+}
+
+
+const styles = {};
+
+styles.fill = {
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  top: 0,
+  bottom: 0
+}
+
+styles.rgb = {
+  ...styles.fill,
 }
