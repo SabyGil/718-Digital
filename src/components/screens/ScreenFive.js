@@ -1,77 +1,94 @@
 import React from 'react';
 import axios from 'axios';
-import { Consumer } from '../../context';
+import {
+	Consumer
+} from '../../context';
 import api from '../../utils/api';
 
 class ScreenFive extends React.Component {
 
-  state = {
-    name: '',
-    email:'',
-    message: '',
-    errors: {}
-  }
+	state = {
+		name: '',
+		email: '',
+		message: '',
+		errors: {}
+	}
 
-  onChange = e => {
-    this.setState({
-       [e.target.name]: e.target.value
-     });
-  }
+	onChange = e => {
+		this.setState({
+			[e.target.name]: e.target.value
+		});
+	}
 
-  onSubmit = (dispatch, e) => {
-    e.preventDefault();
+	onSubmit = (dispatch, e) => {
+		e.preventDefault();
 
-    const { name, email, message } = this.state;
+		const {
+			name,
+			email,
+			message
+		} = this.state;
 
-    if (name === '') {
-      this.setState({
-         errors: { name: 'Name is required' }
-       });
-      return;
-    }
+		if(name === '') {
+			this.setState({
+				errors: {
+					name: 'Name is required'
+				}
+			});
+			return;
+		}
 
-    if (email === '') {
-      this.setState({
-         errors: { email: 'Email is required' }
-       });
-      return;
-    }
+		if(email === '') {
+			this.setState({
+				errors: {
+					email: 'Email is required'
+				}
+			});
+			return;
+		}
 
-    if (message === '') {
-      this.setState({
-         errors: { message: 'Message is required' }
-       });
-      return;
-    }
+		if(message === '') {
+			this.setState({
+				errors: {
+					message: 'Message is required'
+				}
+			});
+			return;
+		}
 
-    const formEntry = {
-      name,
-      email,
-      message
-    }
+		const formEntry = {
+			name,
+			email,
+			message
+		}
 
-  //   axios.post('https://web-718-digital.herokuapp.com/contact', formEntry)
-  //   .then(() => console.log(formEntry, 'HERE')
-  // )
-    api.contactForm(formEntry)
-    .then(res => dispatch({
-      type: 'FORM_ENTRY',
-      payload: res.data
-    }))
+		//   axios.post('https://web-718-digital.herokuapp.com/contact', formEntry)
+		//   .then(() => console.log(formEntry, 'HERE')
+		// )
+		api.contactForm(formEntry)
+			.then(res => dispatch({
+				type: 'FORM_ENTRY',
+				payload: res.data
+			}))
 
-//clear state
-    this.setState({
-      name: '',
-      email: '',
-      message: '',
-      errors: {}
-    })
-  }
+		//clear state
+		this.setState({
+			name: '',
+			email: '',
+			message: '',
+			errors: {}
+		})
+	}
 
-  render(){
-    const { name, email, message, errors } = this.state;
-    return (
-      <Consumer>
+	render() {
+		const {
+			name,
+			email,
+			message,
+			errors
+		} = this.state;
+		return (
+			<Consumer>
         {value => {
           const { dispatch } = value;
           return (
@@ -149,8 +166,8 @@ class ScreenFive extends React.Component {
         }
         }
       </Consumer>
-    )
-  }
+		)
+	}
 }
 
 export default ScreenFive;

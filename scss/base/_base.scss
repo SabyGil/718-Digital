@@ -21,7 +21,8 @@ body {
 }
 
 :root {
-  --template-rows: repeat(8, minmax(min-content, 1fr));
+  // --template-rows: repeat(8, minmax(min-content, 1fr));
+  --template-rows: repeat(8, min-content);
   --template-cols: repeat(8, 1fr);
   --primary-purple: #6b579d;
 }
@@ -44,6 +45,7 @@ ul {
 #scroll-container {
   // border: 10px solid orange;
 }
+
 // view
 
 .view-container {
