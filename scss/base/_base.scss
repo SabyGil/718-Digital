@@ -40,12 +40,6 @@ ul {
 .--purple {
   background: $primary-purple;
 }
-//
-
-#scroll-container {
-  // border: 10px solid orange;
-}
-
 // view
 
 .view-container {
@@ -69,37 +63,19 @@ ul {
   grid-template: var(--template-rows) / var(--template-cols);
   // overflow-y: auto;
   overflow-y: scroll;
-  // Scroll bar styles
-  &::-webkit-scrollbar {
-    width: 6px;
-    background-color: #F5F5F5;
-  }
-
-  &::-webkit-scrollbar,
-  &::-webkit-scrollbar-thumb {
-    overflow: visible;
-    border-radius: 4px;
-    background-color: darken($primary-purple, 20%);
-  }
-
-  &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
-  }
 }
 // TECH MODAL
 
 .tech-modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  @include absCenter;
   width: 120rem;
   height: 80rem;
-  background: rgba(#000, 0.1);
+  background: rgba(#000, 0.4);
   padding: 5rem;
-  // z-index: 200;
+  z-index: 200;
   // ---
+  color: white;
+  font-weight: 500;
 }
 
 .modal-outline {
@@ -108,8 +84,8 @@ ul {
   height: 100%;
   display: grid;
   // grid-template-columns: 1fr 2fr;
-  grid-template-rows: min-content repeat(2, 1fr);
   // grid-template-areas: 'title title''img info' 'client tech';
+  grid-template-rows: min-content repeat(2, 1fr);
   grid-template-areas: 'title' 'img' 'info' 'client' 'tech';
   // grid-template: var(--template-rows) / var(--template-cols);
   padding: 3rem;
@@ -134,7 +110,7 @@ ul {
 
 .project-description {
   grid-area: info;
-  border: 5px solid yellow;
+  // border: 5px solid yellow;
 }
 
 .client {

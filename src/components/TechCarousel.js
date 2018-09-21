@@ -1,52 +1,67 @@
 import React from 'react';
 import Slider from "react-slick";
-
-// import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Button,  ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Modal from 'react-modal';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import { Consumer } from '../context';
 
 export default class TechCarousel extends React.Component {
+	state = {
+		activeModal: null
+	}
+
+	handleClick = (e, index, dispatch) => {
+		this.setState({
+			activeModal: index
+		})
+		dispatch({
+			type:"OPEN_MODAL"
+		})
+	}
+
+	hideModal = () => {
+    this.setState({ activeModal: null })
+	}
 
 	render() {
 		const {
 			slides
 		} = this.props
+		const { activeModal } = this.state;
+
 		const settings = {
-		dots: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		className: 'testing',
-		// adaptiveHeight: true,
-		arrows: true
-	};
+			dots: true,
+			infinite: false,
+			speed: 500,
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			arrows: true
+			// className: 'testing',
+			// adaptiveHeight: true,
+		};
 		return (
 			<Consumer>
 				{value => {
 					const { dispatch, modalIsOpen } = value;
 					const { projects } = value.content;
-					// console.log(projects, 'here')
-
 					return (
 						<React.Fragment>
+							{/* {slides && */}
 							{projects &&
 								<Slider {...settings}>
-									 {projects.map((content, id) => {
-									 console.log(content, 'slider')
+									 {projects.map((project, index) => {
+									 // {slides.map((project, id) => {
 										return (
-											<div className="item " key={content.id}>
-												<p>{content.name}</p>
-
-												<Button color="danger" onClick={()=>dispatch({ type:"OPEN_MODAL" })}>BUTTON</Button>
+											<div className="item " key={project.id}>
+												<p>{project.name}</p>
+												<Button color="danger" onClick={e => this.handleClick(e, index, dispatch)}>View Details</Button>
+												{activeModal === index ?
 													<Modal
-														className='tech-modal'
+														className='tech-modal normal-scroll'
 														isOpen={modalIsOpen}
-														onRequestClose={()=>dispatch({type:"CLOSE_MODAL"})}
+														// onRequestClose={()=>dispatch({type:"CLOSE_MODAL"})}
+														onRequestClose={this.hideModal}
 														overlayClassName='overlay'
 														>
 															<div className="modal-outline">
@@ -54,7 +69,7 @@ export default class TechCarousel extends React.Component {
 
 																<div>
 																	<div className="project">Project</div>
-																	<p>{content.client_or_team}</p>
+																	<p>{project.client_or_team}</p>
 
 																</div>
 
@@ -64,6 +79,8 @@ export default class TechCarousel extends React.Component {
 																	</button>
 																	<p className="lead display-3">
 																		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut magnam expedita, quisquam similique. Hic doloremque suscipit cupiditate assumenda illum! Aliquid.
+																		e assumenda illum! Aliquid
+																		e assumenda illum! Aliquid
 																	</p>
 																	{'some modal content'}
 																</div>
@@ -96,15 +113,15 @@ export default class TechCarousel extends React.Component {
 																	</div>
 																</div>
 
-															{/* <p>{content.client_or_team}</p> */}
+															{/* <p>{project.client_or_team}</p> */}
 														</div>
 													</Modal>
+													: null}
 											</div>
 										)}
 									)}
 							</Slider>
 							}
-
 						</React.Fragment>
 					)
 				}}

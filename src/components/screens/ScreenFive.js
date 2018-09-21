@@ -87,6 +87,7 @@ class ScreenFive extends React.Component {
 			message,
 			errors
 		} = this.state;
+		
 		return (
 			<Consumer>
         {value => {

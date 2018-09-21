@@ -1,7 +1,6 @@
 import React from 'react';
 import TechCarousel from '../TechCarousel';
-import {Route, Link, NavLink, Redirect, withRouter, Switch} from 'react-router-dom';
-// import 'simplebar/dist/simplebar.css';
+import { Route, Link, NavLink, Redirect, withRouter, Switch } from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Consumer } from '../../context';
 
@@ -76,8 +75,8 @@ class ThirdScreen extends React.Component {
               timeout={1000}
               classNames='fade'
             >
-                <Route path='/:routeId' component={Path}/>
-                {/* <Route exact={true} path='/:r/:g/:b' component={Test}/> */}
+              <Route path='/:routeId' component={Path}/>
+              {/* <Route exact={true} path='/:r/:g/:b' component={Test}/> */}
           </CSSTransition>
         </TransitionGroup>
       {/* </div> */}
@@ -117,32 +116,23 @@ const Path = ({ match }) => {
         lorem ipsum dipsum
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
         <h1>{route.contentTwo}</h1>
-
-      {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
-      lorem ipsum dipsum
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
-      lorem ipsum dipsum
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam. */}
-    </div>
-    <div className='screen-three__aside'>
-      <h1>{route.contentOne}</h1>
-      lorem ipsum dipsum
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
-      lorem ipsum dipsum
-    </div>
-    <div className='screen-three__content'>
-      <h1>{route.heading}</h1>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
-      lorem ipsum dipsum
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
-    </div>
+      </div>
+      <div className='screen-three__aside'>
+        <h1>{route.contentOne}</h1>
+        lorem ipsum dipsum
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+        lorem ipsum dipsum
+      </div>
+      <div className='screen-three__content'>
+        <h1>{route.heading}</h1>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+        lorem ipsum dipsum
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+      </div>
 
       <div className='screen-three__projects-container'>
-        {/* <TechCarousel match={match} slides={route.slides}/> */}
          {/* <TechCarousel match={match} slides={route.slides || []} /> */}
          <TechCarousel />
-         {/* <TechCarousel match={match} /> */}
-
       </div>
     </div>
   )
