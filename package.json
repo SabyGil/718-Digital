@@ -10,11 +10,11 @@
   "author": "Sabier Richards",
   "license": "MIT",
   "dependencies": {
-    "@fullpage/react-fullpage": "0.0.6",
+    "@fullpage/react-fullpage": "^0.1.0",
     "axios": "^0.18.0",
     "jquery": "^3.3.1",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "react-modal": "^3.5.1",
     "react-router-dom": "^4.3.1",
     "react-slick": "^0.23.1",
@@ -36,7 +36,7 @@
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.4.1",
+    "mini-css-extract-plugin": "^0.4.3",
     "node-sass": "^4.9.3",
     "postcss-import": "^12.0.0",
     "postcss-loader": "^3.0.0",
@@ -45,7 +45,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.22.1",
     "url-loader": "^1.1.1",
-    "webpack": "^4.19.0",
+    "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.8"
   }

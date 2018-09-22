@@ -2,6 +2,7 @@
   overflow: auto;
   display: grid;
   align-content: center;
+
   &__contact-heading {
     // grid-row: 3;
     grid-column: 1 / -1;
@@ -12,13 +13,14 @@
   }
 
   &__contact-form {
-    grid-row: 3 / -1;
-    // grid-row: -1 / -1;
-    grid-column: 1 / 5;
     display: grid;
-    justify-content: center;
+    grid-row: 3 / -1;
+    grid-column: 1 / 5;
     align-items: center;
     border-right: 5px solid white;
+    // grid-row: -1 / -1;
+    // justify-content: center;
+    padding: 4rem;
 
     .form-group {
       label {

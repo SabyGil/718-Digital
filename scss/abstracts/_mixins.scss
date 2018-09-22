@@ -4,3 +4,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+@mixin imgBoxShadow {
+  // -webkit-box-shadow: 30px 20px 10px 0 rgba(0,0,0,0.75);
+  // -moz-box-shadow: 30px 20px 10px 0 rgba(0,0,0,0.75);
+  box-shadow: 30px 20px 10px 0 rgba(0,0,0,0.75);
+}
+@mixin sectionTitle {
+  color: $primary-purple;
+  font-size: 4rem;
+  font-weight: 700;
+}

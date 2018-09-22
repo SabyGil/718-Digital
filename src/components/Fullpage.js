@@ -7,7 +7,6 @@ import {
 } from './screens/ScreenThree';
 import ScreenFour from './screens/ScreenFour';
 import ScreenFive from './screens/ScreenFive';
-import Menu from './Menu';
 
 /*
 <button onClick={() => fullpageApi.moveTo(3, 4)}>Click me to move down</button>

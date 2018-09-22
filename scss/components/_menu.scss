@@ -26,30 +26,55 @@
     text-shadow: none;
   }
 }
+@keyframes test {
+  0% {
+    // animation-delay: 1.2s;
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+
+  30% {}
+
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
 
 .menu-container {
   position: relative;
   font-size: 4rem;
-  font-family: 'Inconsolata';
+  font-family: $terminalFont;
   font-weight: 400;
+
   .logo {
     position: fixed;
     left: 50%;
-    -webkit-transform: translate(-50%,0%);
-    -ms-transform: translate(-50%,0%);
     transform: translate(-50%,0%);
-    /* text-align: left; */
     z-index: 2;
   }
 
   ul {
-    /* border: 1px solid red; */
-    /* font-size: 4.2rem; */
     position: fixed;
     right: 0;
     color: lightGrey;
     z-index: 2;
     margin: 0 20px 0 auto;
+    animation: moveInTop 1s linear;
+
+    i {
+      cursor: pointer;
+    }
   }
 }
 
@@ -67,20 +92,25 @@
   padding: 0 0 0 13rem;
   background-color: black;
   z-index: 99;
+  animation: test 1s ease-in-out;
+
   a {
     color: lightGrey;
+
     &:hover {
-      color: var(--primary-purple);
+      color: $primary-purple;
     }
+
     &.active {
       animation: blink 1.5s ease-in-out infinite;
     }
+
     &.active:not(.logo)::before {
-      font-family: 'Inconsolata';
+      font-family: $terminalFont;
       content: "718:$";
       position: absolute;
       left: 2rem;
-      color: var(--primary-purple);
+      color: $primary-purple;
     }
   }
 

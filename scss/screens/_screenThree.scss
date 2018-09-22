@@ -41,9 +41,7 @@
   &__img {
     border: 6px solid yellow;
     grid-column: 1 / 5;
-    -webkit-box-shadow: 30px 20px 10px 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 30px 20px 10px 0 rgba(0,0,0,0.75);
-    box-shadow: 30px 20px 10px 0 rgba(0,0,0,0.75);
+    @include imgBoxShadow;
     background: url("https://images.pexels.com/photos/935870/pexels-photo-935870.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260") no-repeat center center;
     background-size: cover;
     padding: 10rem;
@@ -65,6 +63,10 @@
     grid-column: 6 / 9;
     // grid-row: 1 / -1;
     grid-row: 1;
+
+    h1 {
+      @include sectionTitle;
+    }
   }
 
   &__projects-container {

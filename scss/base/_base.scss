@@ -48,6 +48,7 @@ ul {
   // height: 100%;
   // border: 5px solid green;
 }
+//global classes
 
 .section-box {
   border: 2px solid white;
@@ -64,105 +65,11 @@ ul {
   // overflow-y: auto;
   overflow-y: scroll;
 }
-// TECH MODAL
 
-.tech-modal {
-  @include absCenter;
-  width: 120rem;
-  height: 80rem;
-  background: rgba(#000, 0.4);
-  padding: 5rem;
-  z-index: 200;
-  // ---
-  color: white;
-  font-weight: 500;
-}
-
-.modal-outline {
-  border: 2px solid white;
-  box-shadow: inset 0 0 1.5rem white, 0 0 1.5rem white;
-  height: 100%;
-  display: grid;
-  // grid-template-columns: 1fr 2fr;
-  // grid-template-areas: 'title title''img info' 'client tech';
-  grid-template-rows: min-content repeat(2, 1fr);
-  grid-template-areas: 'title' 'img' 'info' 'client' 'tech';
-  // grid-template: var(--template-rows) / var(--template-cols);
-  padding: 3rem;
-  // overflow-y: auto;
-  // overflow-y: scroll;
-  overflow: auto;
-}
-
-.modal-title {
-  grid-area: title;
-}
-
-.project {
-  grid-area: img;
-  border: 1px solid red;
-  // background-color: blue;
-  background: url("https://images.unsplash.com/photo-1486475554424-2fa50cd59f18?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=044e51f329bf5dab235887d9b4e46332&auto=format&fit=crop&w=1351&q=80");
-  background-size: cover;
-  height: 20rem;
-  padding: 2rem;
-}
-
-.project-description {
-  grid-area: info;
-  // border: 5px solid yellow;
-}
-
-.client {
-  grid-area: client;
-  border: 5px solid blue;
-  display: grid;
-  grid-template-rows: min-content 1fr;
-  grid-template-columns: repeat(5, 1fr);
-
-  .b {
-    grid-row: 2;
-    grid-column: 1 / 5;
-    // background-color: red;
-    // background: url("https://images.unsplash.com/photo-1486475554424-2fa50cd59f18?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=044e51f329bf5dab235887d9b4e46332&auto=format&fit=crop&w=1351&q=80");
-    // background-size: cover;
-    padding: 2rem;
-
-    img {
-      height: 100%;
-      width: 100%;
-    }
-  }
-}
-
-.tech {
-  grid-area: tech;
-  border: 5px solid orangered;
-  display: flex;
-  text-align: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-}
-
-.modal-close-btn {
-  position: absolute;
-  right: -1rem;
-  top: -25px;
-  font-size: 3rem;
-  border-radius: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: white;
-  outline: none;
-}
-//Tech media queries
-@media (min-width: 500px) {
-  .modal-outline {
-    grid-template-columns: 1fr 2fr;
-    grid-template-areas: 'title title''img info' 'client tech';
-  }
+.section-title {
+  color: $primary-purple;
+  font-size: 4rem;
+  font-weight: 700;
 }
 //--Transition Group styles
 // .cover {
@@ -225,35 +132,3 @@ ul {
   opacity: 0;
   transition: opacity 1000ms ease-in-out;
 }
-//--
-
-.scroll-bar-wrap {
-  // background-color: #F5F5F5;
-  // float: left;
-  // height: 300px;
-  // margin-bottom: 25px;
-  // margin-left: 22px;
-  // margin-top: 40px;
-  // width: 100%;
-  // overflow-y: scroll;
-}
-//
-// .force-overflow {
-//   min-height: 500px;
-// }
-//
-// .cover-bar {
-//   position: absolute;
-//   background: #fff;
-//   height: 100%;
-//   top: 0;
-//   right: 0;
-//   width: 0.4em;
-//   -webkit-transition: all 0.5s;
-//   opacity: 0;
-// }
-//
-// .scroll-bar-wrap:hover .cover-bar {
-//   opacity: 1;
-//   -webkit-transition: all 0.5s;
-// }

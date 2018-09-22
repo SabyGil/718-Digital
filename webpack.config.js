@@ -30,7 +30,6 @@ module.exports = {
 			},
 			{
 				test: /\.(png|jpg|jpeg|gif|pdf|woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-				// /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/
 		    use: [{
 		      loader: 'file-loader',
 		      options: {
@@ -38,21 +37,16 @@ module.exports = {
 		      },
 		    }],
 		  },
-			// {
-			//  test: /\.mp4$/,
-			//  use: 'file-loader?name=videos/[name].[ext]',
-			// },
 			{
-				test: /\.(mov|mp4)$/,
-				exclude: [
-				 path.resolve(__dirname, './node_modules'),
-			 ],
-				use: [{
-					loader: 'url-loader',
-					options: {
-						name: '[name].[ext]'
-					}
-				}]
+					test: /\.(mov|mp4)$/,
+					use: [
+						{
+							loader: 'file-loader',
+							options: {
+								name: '[name].[ext]'
+							}
+						}
+					]
 			},
 			{
 				test: /\.s?[ac]ss$/,
