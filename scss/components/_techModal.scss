@@ -1,13 +1,23 @@
 .tech-modal {
-  @include absCenter;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 120rem;
   height: 80rem;
   background: rgba(#000, 0.4);
   padding: 5rem;
-  z-index: 200;
-  // ---
   color: white;
   font-weight: 500;
+  top: 0;
+  transition: top 500ms ease-in-out;
+
+  &.ReactModal__Content--after-open {
+    top: 50%;
+  }
+
+  &.ReactModal__Content--before-close {
+    top: 0;
+  }
 }
 
 .modal-outline {
@@ -94,5 +104,23 @@
   .modal-outline {
     grid-template-columns: 1fr 2fr;
     grid-template-areas: 'title title''img info' 'client tech';
+  }
+}
+//--
+
+.ReactModalPortal > div {
+  opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+  transition: opacity 500ms ease-in-out;
+  background: rgba(0, 0, 0, 0.15);
+
+  &--after-open {
+    opacity: 1;
+  }
+
+  &--before-close {
+    opacity: 0;
   }
 }
