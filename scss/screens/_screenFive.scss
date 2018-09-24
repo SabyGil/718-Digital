@@ -59,3 +59,23 @@
     }
   }
 }
+
+@media screen and (max-width: 56.25em) {
+  .screen-five {
+    &__contact-heading {
+      grid-row: 1;
+    }
+    &__contact-form {
+      grid-row: 2;
+      grid-column: 1/ -1;
+      border-right: none;
+      border-bottom: 5px solid white;
+    }
+    &__social-media {
+      grid-column: 1 / -1;
+      grid-row: 3;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+}
