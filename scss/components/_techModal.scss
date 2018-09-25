@@ -3,8 +3,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 120rem;
-  height: 80rem;
-  background: rgba(#000, 0.4);
+  height: 70rem;
+  background: rgba(#000, 0.7);
   padding: 5rem;
   color: white;
   font-weight: 500;
@@ -104,6 +104,15 @@
   .modal-outline {
     grid-template-columns: 1fr 2fr;
     grid-template-areas: 'title title''img info' 'client tech';
+  }
+}
+
+@media (max-width: 56.25em){
+  .tech-modal {
+    width: 80vw;
+  }
+  .modal-outline {
+    // width: 100vw;
   }
 }
 //--

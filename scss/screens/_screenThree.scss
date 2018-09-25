@@ -201,3 +201,25 @@ $primary-color: rgba(0,0,0, .5);
   // background-color: rgba(0, 0, 0, .05);
   background-color: rgba(0, 0, 0, .5);
 }
+
+//--Transition Group styles
+.fade-appear,
+.fade-enter {
+  opacity: 0;
+  z-index: 99;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in-out;
+}
+
+.fade-exit {
+  opacity: 1;
+  // background-color: red;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
+}

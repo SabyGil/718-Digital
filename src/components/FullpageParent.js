@@ -16,7 +16,8 @@ const fullpageOptions = {
 	anchors: ['Main', 'About', 'Services', 'Members', 'Contact'],
 	navigation: true,
 	controlArrows: true,
-	normalScrollElements: ".normal-scroll"
+	normalScrollElements: ".normal-scroll",
+	// lazyLoading: false
 };
 
 export default class FulpageParent extends React.Component {

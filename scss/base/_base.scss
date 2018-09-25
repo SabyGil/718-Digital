@@ -22,7 +22,8 @@ body {
 
 :root {
   // --template-rows: repeat(8, minmax(min-content, 1fr));
-  --template-rows: repeat(8, min-content);
+  // --template-rows: 1fr repeat(8, min-content) 1fr;
+  --template-rows:  repeat(8, min-content);
   --template-cols: repeat(8, 1fr);
   --primary-purple: #6b579d;
 }
@@ -70,65 +71,4 @@ ul {
   color: $primary-purple;
   font-size: 4rem;
   font-weight: 700;
-}
-//--Transition Group styles
-// .cover {
-//   background: black;
-//   animation: color-me-in 5s;
-//   position: absolute;
-//   left: 0;
-//   right: 0;
-//   top: 0;
-//   bottom: 0;
-//   // z-index: 99;
-// }
-// @keyframes color-me-in {
-//   /* You could think of as "step 1" */
-//   0% {
-//     // background: orange;
-//     .fade-appear,
-//     .fade-enter {
-//       opacity: 0;
-//       background-color: green;
-//       z-index: 99;
-//     }
-//   }
-//
-//   25% {
-//
-//   }
-//   /* You could think of as "step 2" */
-//   100% {
-//     background: black;
-//   }
-// }
-
-.fade-appear,
-.fade-enter {
-  opacity: 0;
-  // background-color: green;
-  z-index: 99;
-}
-
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  // background-color: blue;
-  transition: opacity 1000ms ease-in-out;
-  // position: absolute;
-  // transition: background-color 5000ms linear;
-  // border: 5px solid red;
-  // left: 0;
-  // right: 0;
-  // top: 0;
-  // bottom: 0;
-}
-
-.fade-exit {
-  opacity: 1;
-  // background-color: red;
-}
-
-.fade-exit.fade-exit-active {
-  opacity: 0;
-  transition: opacity 1000ms ease-in-out;
 }
