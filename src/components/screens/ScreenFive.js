@@ -4,6 +4,7 @@ import {
 	Consumer
 } from '../../context';
 import api from '../../utils/api';
+import ContactForm from '../ContactForm';
 
 class ScreenFive extends React.Component {
 
@@ -87,7 +88,7 @@ class ScreenFive extends React.Component {
 			message,
 			errors
 		} = this.state;
-		
+
 		return (
 			<Consumer>
         {value => {
@@ -100,71 +101,48 @@ class ScreenFive extends React.Component {
                 </div>
                 <div className='screen-five__contact-form'>
                   <form onSubmit={this.onSubmit.bind(this, dispatch)}>
-                  {/* <form> */}
-                    <div className="form-group">
-                      <label htmlFor="name" className='d-block'>Name:</label>
-                      <input
-                        type="text"
-                        label='Name'
-                        name='name'
-                        className='form-control'
-                        placeholder='John Smith'
-                        onChange={this.onChange}
-                        value={name}
-                        error={errors.name}
-                      />
-                    </div>
-                    {/*  */}
-                    <div className="form-group">
-                      <label htmlFor="email" className='d-block'>Email:</label>
-                      <input
-                        type="email"
-                        label='Email'
-                        name='email'
-                        className='form-control'
-                        placeholder='Enter Email'
-                        onChange={this.onChange}
-                        value={email}
-                        error={errors.email}
-                      />
-                    </div>
-                    {/*  */}
-                    <div className="form-group">
-                      <label htmlFor="message" className='d-block label-light'>Message:</label>
-                      <textarea
-                        label='Message'
-                        name='message'
-                        className='form-control'
-                        placeholder='Enter Message'
-                        onChange={this.onChange}
-                        value={message}
-                        error={errors.message}
-                         >
-                         Enter text here...
-                     </textarea>
-
-                    </div>
-
+                    <ContactForm
+											label='Name'
+	                    name='name'
+	                    placeholder='Enter Name'
+	                    value={name}
+	                    onChange={this.onChange}
+	                    error={errors.name}
+										 />
+										<ContactForm
+	                     label='Email'
+	                     name='email'
+	                     type='email'
+	                     placeholder='Enter Email'
+	                     value={email}
+	                     onChange={this.onChange}
+	                     error={errors.email}
+	                   />
+                    <ContactForm
+                      label='Message'
+                      name='message'
+                      placeholder='Enter Message'
+                      onChange={this.onChange}
+                      value={message}
+                      error={errors.message}
+                     />
                     <input type="submit" value='Submit' className="btn btn-block p-3 --purple" />
-
                   </form>
-
                 </div>
                 <div className='screen-five__social-media'>
-                    <div className='circle'>
-                      <i className="fab fa-twitter"/>
-                    </div>
-                    <div className='circle'>
-                      <i className="fab fa-google-plus-g"/>
-                    </div>
-                    <div className='circle'>
-                      <i className="fab fa-facebook-square"/>
-                    </div>
+                  <div className='circle'>
+                    <i className="fab fa-twitter"/>
+                  </div>
+                  <div className='circle'>
+                    <i className="fab fa-google-plus-g"/>
+                  </div>
+                  <div className='circle'>
+                    <i className="fab fa-facebook-square"/>
+                  </div>
                 </div>
               </div>
             </div>
-          )
-        }
+          )}
         }
       </Consumer>
 		)

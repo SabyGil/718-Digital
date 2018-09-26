@@ -7,6 +7,7 @@
 }
 
 html {
+  box-sizing: border-box;
   font-size: 62.5%;
 }
 
@@ -23,13 +24,13 @@ body {
 :root {
   // --template-rows: repeat(8, minmax(min-content, 1fr));
   // --template-rows: 1fr repeat(8, min-content) 1fr;
-  --template-rows:  repeat(8, min-content);
+  --template-rows: repeat(8, min-content);
   --template-cols: repeat(8, 1fr);
   --primary-purple: #6b579d;
 }
 //
 
-a:hover {
+a {
   text-decoration: none;
 }
 
@@ -41,6 +42,11 @@ ul {
 .--purple {
   background: $primary-purple;
 }
+
+/*
+font-family: 'Roboto', sans-serif;
+font-family: 'Inconsolata', monospace;
+*/
 // view
 
 .view-container {

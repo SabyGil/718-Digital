@@ -1,2 +1,30 @@
+// COLORS
 $primary-purple: #6b579d;
 $terminalFont: 'Inconsolata';
+
+
+$theme-colors: (
+  "primary": #0074d9,
+  "danger": blue
+);
+
+//media-queries
+
+
+// $default-font-size: 1.6rem;
+
+// --breakpoint-xs: 0;
+// --breakpoint-sm: 576px;
+// --breakpoint-md: 768px;
+// --breakpoint-lg: 992px;
+// --breakpoint-xl: 1200px;
+
+// @mixin mediaSm {
+//   @media screen and (max-width: )
+// }
+
+// @media (min-width(var(--breakpoint-sm))) {
+//   .content-secondary {
+//     display: block;
+//   }
+// }
