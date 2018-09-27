@@ -15,6 +15,7 @@ import {
 import {
 	Consumer
 } from '../../context';
+import classnames from 'classnames';
 
 const routeInfo = [{
 		id: '1',
@@ -82,6 +83,16 @@ const NestedLink = (props) => {
 }
 
 class ThirdScreen extends React.Component {
+	state = {
+		isActive: null
+	}
+
+	componentDidMount() {
+		this.setState({
+			isActive: false
+		})
+	}
+
 	render() {
 		const {
 			location
@@ -89,27 +100,40 @@ class ThirdScreen extends React.Component {
 		const route = routeInfo.find(({
 			heading
 		}) => heading === 'collective');
-		// TODO: render a component called background
+		const {
+			isActive
+		} = this.state;
+		const bgHook = document.querySelector('#bg-hook')
+		if(isActive === true) {
+			bgHook.classList.add('bg-animation')
+		}
+		if(isActive === false) {
+			bgHook.classList.remove('bg-animation')
+		}
+		// console.log(location.pathname)
 		return (
-			<div className='view-container bg'>
+			<div id='bg-hook' className='view-container bg  '>
         {/* if route === /, collective is default */}
         <Route exact path='/' render={() => (
           <Redirect to='/collective'/>
         )}/>
-          {/* otherwise render nested paths */}
+        {/* otherwise render nested paths */}
 
-    {/* <div className="cover"> */}
         <TransitionGroup component={null}>
           <CSSTransition
-              key={location.key}
-              timeout={1000}
-              classNames='fade'
-            >
-              <Route path='/:routeId' component={Path}/>
-              {/* <Route exact={true} path='/:r/:g/:b' component={Test}/> */}
+            key={location.key}
+						onEnter={()=> this.setState({
+							isActive: true
+						})}
+							timeout={3000}
+							classNames='fade'
+							unmountOnExit
+							onExited={() => this.setState({
+								isActive: false
+							})}>
+            <Route path='/:routeId' component={Path}/>
           </CSSTransition>
         </TransitionGroup>
-      {/* </div> */}
 
         {/* Links around section box */}
         <NestedLink/>
@@ -156,36 +180,4 @@ const Path = ({
       </div>
     </div>
 	)
-}
-// RGB
-const Test = ({
-	match
-}) => {
-	const {
-		params
-	} = match;
-	return (
-		<div style={{
-      ...styles.rgb,
-      // background: `rgb(${params.r}, ${params.g}, ${params.b})`
-      background: `#e0115f`
-    }}>
-      {/* rgb({params.r}, {params.g}, {params.b}) */}
-    </div>
-	)
-}
-
-
-const styles = {};
-
-styles.fill = {
-	position: 'absolute',
-	left: 0,
-	right: 0,
-	top: 0,
-	bottom: 0
-}
-
-styles.rgb = {
-	...styles.fill,
 }

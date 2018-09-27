@@ -155,6 +155,13 @@ $primary-color: rgba(0,0,0, .5);
   background-position: center;
   // height: 200px;
 }
+
+.bg-animation {
+  background: url('https://media.giphy.com/media/l4pSXyy8MFv3atNHW/giphy.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 // Tech Modals
 
 .slick-next:before,
@@ -217,15 +224,14 @@ $primary-color: rgba(0,0,0, .5);
 
 .fade-enter.fade-enter-active {
   opacity: 1;
-  transition: opacity 1000ms ease-in-out;
+  transition: opacity 3000ms ease-in-out;
 }
 
 .fade-exit {
   opacity: 1;
-  // background-color: red;
 }
 
 .fade-exit.fade-exit-active {
   opacity: 0;
-  transition: opacity 1000ms ease-in-out;
+  transition: opacity 3000ms ease-in-out;
 }
