@@ -20,12 +20,16 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  background-color: lighten($primary-purple, 10%);
+  // background-image: url("../../src/imgs/logo.png");
+  // height: 100%;
 }
 
 :root {
   // --template-rows: repeat(8, minmax(min-content, 1fr));
   // --template-rows: 1fr repeat(8, min-content) 1fr;
   --template-rows: repeat(8, min-content);
+  // --template-cols: minmax(1rem, 5rem) repeat(8, minmax(min-content, 15rem)) minmax(1rem, 5rem);
   --template-cols: repeat(8, 1fr);
   --primary-purple: #6b579d;
 }
@@ -43,7 +47,6 @@ ul {
 .--purple {
   background: $primary-purple;
 }
-
 /*
 font-family: 'Roboto', sans-serif;
 font-family: 'Inconsolata', monospace;

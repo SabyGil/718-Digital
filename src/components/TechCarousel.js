@@ -43,7 +43,7 @@ export default class TechCarousel extends React.Component {
 			dots: true,
 			infinite: false,
 			speed: 500,
-			slidesToShow: 2,
+			slidesToShow: 5,
 			slidesToScroll: 1,
 			arrows: true
 			// className: 'testing',

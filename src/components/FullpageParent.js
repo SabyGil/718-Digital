@@ -6,7 +6,6 @@ import GIF from '../imgs/test.gif';
 import {
 	Consumer
 } from '../context';
-
 import 'fullpage.js/vendors/scrolloverflow';
 
 const fullpageOptions = {

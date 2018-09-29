@@ -16,6 +16,8 @@ import {
 	Consumer
 } from '../../context';
 import classnames from 'classnames';
+import { Button, Fade } from "reactstrap";
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const routeInfo = [{
 		id: '1',
@@ -84,14 +86,24 @@ const NestedLink = (props) => {
 
 class ThirdScreen extends React.Component {
 	state = {
-		isActive: null
+		// isActive: null,
+		fadeIn: true,
+		bgFade: false
 	}
 
-	componentDidMount() {
-		this.setState({
-			isActive: false
-		})
-	}
+	// componentDidMount() {
+	// 	this.setState({
+	// 		isActive: false,
+	// 	})
+	// }
+
+	toggle = () => {
+	this.setState({
+			fadeIn: !this.state.fadeIn,
+			bgFade: !this.state.fadeIn,
+			// bgFade: !this.state.bgFade,
+		});
+	};
 
 	render() {
 		const {
@@ -104,15 +116,18 @@ class ThirdScreen extends React.Component {
 			isActive
 		} = this.state;
 		const bgHook = document.querySelector('#bg-hook')
-		if(isActive === true) {
-			bgHook.classList.add('bg-animation')
-		}
-		if(isActive === false) {
-			bgHook.classList.remove('bg-animation')
-		}
+		// if(isActive === false) {
+		// 	bgHook.classList.add('bg-animation')
+		// }
+		// if(isActive === false) {
+		// 	bgHook.classList.remove('bg-animation')
+		// }
 		// console.log(location.pathname)
 		return (
-			<div id='bg-hook' className='view-container bg  '>
+			<React.Fragment>
+				<Fade in={this.state.bgFade} tag="div"  className="bg-static" />
+				<Fade in={this.state.fadeIn} tag="div"  className="view-container bg-image ">
+
         {/* if route === /, collective is default */}
         <Route exact path='/' render={() => (
           <Redirect to='/collective'/>
@@ -123,13 +138,18 @@ class ThirdScreen extends React.Component {
           <CSSTransition
             key={location.key}
 						onEnter={()=> this.setState({
-							isActive: true
+							// isActive: true,
+							bgFade: true,
+							fadeIn: false,
 						})}
-							timeout={3000}
+							timeout={1000}
+							// timeout={450}
 							classNames='fade'
-							unmountOnExit
+							// unmountOnExit
 							onExited={() => this.setState({
-								isActive: false
+								// isActive: false,
+								fadeIn: true,
+								bgFade: false
 							})}>
             <Route path='/:routeId' component={Path}/>
           </CSSTransition>
@@ -137,7 +157,8 @@ class ThirdScreen extends React.Component {
 
         {/* Links around section box */}
         <NestedLink/>
-      </div>
+				</Fade>
+			</React.Fragment>
 		);
 	}
 }

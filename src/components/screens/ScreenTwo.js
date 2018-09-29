@@ -39,7 +39,6 @@ class ScreenTwo extends React.Component {
               lorem ipsum
             </p>
           </div>
-          {/* <div className="cover-bar" data-simplebar></div> */}
 
         </div>
       </div>

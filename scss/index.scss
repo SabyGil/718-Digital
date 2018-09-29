@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700|Roboto:400,700');
-
-
 @import 'abstracts/mixins';
 @import 'abstracts/variables';
 @import 'base/base'; //components
 @import 'components/menu';
 @import 'components/navArrows';
-@import 'components/logoAnimation'; //screens
+@import 'components/logoAnimation';
 @import 'components/scrollBar';
 @import 'components/techModal';
 @import 'screens/screenTwo';
 @import 'screens/screenThree';
 @import 'screens/screenFour';
 @import 'screens/screenFive';
+@import 'components/fadingAnimations';
 @import 'abstracts/mobile';
-
 @import "node_modules/bootstrap/scss/functions";
 @import "node_modules/bootstrap/scss/variables";
 @import "node_modules/bootstrap/scss/mixins";
 @import "node_modules/bootstrap/scss/buttons";
 @import "node_modules/bootstrap/scss/forms";
+@import "node_modules/bootstrap/scss/transitions";
+@import "node_modules/bootstrap/scss/code";
