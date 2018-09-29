@@ -15,9 +15,9 @@ import {
 import {
 	Consumer
 } from '../../context';
-import classnames from 'classnames';
-import { Button, Fade } from "reactstrap";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+	Fade
+} from "reactstrap";
 
 const routeInfo = [{
 		id: '1',
@@ -98,10 +98,10 @@ class ThirdScreen extends React.Component {
 	// }
 
 	toggle = () => {
-	this.setState({
+		this.setState({
 			fadeIn: !this.state.fadeIn,
-			bgFade: !this.state.fadeIn,
-			// bgFade: !this.state.bgFade,
+			// bgFade: !this.state.fadeIn,
+			bgFade: !this.state.bgFade,
 		});
 	};
 
@@ -112,10 +112,10 @@ class ThirdScreen extends React.Component {
 		const route = routeInfo.find(({
 			heading
 		}) => heading === 'collective');
-		const {
-			isActive
-		} = this.state;
-		const bgHook = document.querySelector('#bg-hook')
+		// const {
+		// 	isActive
+		// } = this.state;
+		// const bgHook = document.querySelector('#bg-hook')
 		// if(isActive === false) {
 		// 	bgHook.classList.add('bg-animation')
 		// }

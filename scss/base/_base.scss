@@ -13,16 +13,18 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: sans-serif;
-  // background-image: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0, .5)), url("https://media.giphy.com/media/26tPbLsr9oE72erjG/giphy.gif");
-  // background: url('https://media.giphy.com/media/l4pSXyy8MFv3atNHW/giphy.gif');
+  font-family: $font-primary;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  background-size: cover;
-  background-color: lighten($primary-purple, 10%);
-  // background-image: url("../../src/imgs/logo.png");
-  // height: 100%;
+  background-color: black;
+  background-image: url("../src/imgs/logo.png");
+  // background-image: linear-gradient(rgba(0,0,0, .5), rgba(0,0,0, .5)), url("https://media.giphy.com/media/26tPbLsr9oE72erjG/giphy.gif");
+  // background: url('https://media.giphy.com/media/l4pSXyy8MFv3atNHW/giphy.gif');
+  // background-size: cover;
+  // background-color: lighten($primary-purple, 10%);
+  // background-color: transparent;
+  // -webkit-backface-visibility: hidden;
 }
 
 :root {
@@ -47,10 +49,12 @@ ul {
 .--purple {
   background: $primary-purple;
 }
-/*
-font-family: 'Roboto', sans-serif;
-font-family: 'Inconsolata', monospace;
-*/
+
+#time-display {
+  font-size: $default-font-size;
+  margin-bottom: .5rem;
+}
+
 // view
 
 .view-container {
