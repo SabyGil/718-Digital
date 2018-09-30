@@ -42,7 +42,7 @@
 
 .project {
   grid-area: img;
-  border: 1px solid red;
+  // border: 1px solid red;
   // background-color: blue;
   background: url("https://images.unsplash.com/photo-1486475554424-2fa50cd59f18?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=044e51f329bf5dab235887d9b4e46332&auto=format&fit=crop&w=1351&q=80");
   background-size: cover;
@@ -57,7 +57,7 @@
 
 .client {
   grid-area: client;
-  border: 5px solid blue;
+  // border: 5px solid blue;
   display: grid;
   grid-template-rows: min-content 1fr;
   grid-template-columns: repeat(5, 1fr);
@@ -79,7 +79,7 @@
 
 .tech {
   grid-area: tech;
-  border: 5px solid orangered;
+  // border: 5px solid orangered;
   display: flex;
   text-align: center;
   flex-wrap: wrap;

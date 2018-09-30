@@ -42,8 +42,8 @@
   padding: 2rem;
   color: white;
   font-weight: 700;
-  overflow: auto;
-  align-content: center;
+  // overflow: auto;
+  // align-content: center;
   // grid-gap: 1rem;
   &__img {
     // border: 6px solid yellow;
@@ -108,9 +108,9 @@
 
     .slick-initialized .slick-slide {
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       // border: 5px solid blue;
-      width: 30rem !important;
+      // width: 30rem !important;
     }
 
     .item {
@@ -127,8 +127,7 @@
     }
 
     .testing {
-      border: 2px solid red;
-      // display: flex;
+
     }
   }
 }

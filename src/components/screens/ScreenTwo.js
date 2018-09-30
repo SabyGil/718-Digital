@@ -2,9 +2,9 @@ import React from 'react';
 
 class ScreenTwo extends React.Component {
 
-  render() {
-    return (
-      <div id='main' className='view-container' style={{'backgroundColor':'blue'}}>
+	render() {
+		return (
+			<div id='main' className='view-container bg-two' >
         <div className="section-box screen-two scroll-bar-wrap normal-scroll">
           {/* <div class="force-overflow"></div> */}
           <h3 className='screen-two__title'>lorem ipsum lorem ipsum dipsum lorem ipsum lorem ipsum dipsum
@@ -42,8 +42,8 @@ class ScreenTwo extends React.Component {
 
         </div>
       </div>
-    );
-  }
+		);
+	}
 }
 
 export default ScreenTwo;

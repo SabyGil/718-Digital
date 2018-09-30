@@ -1,3 +1,10 @@
+.bg-four {
+  background: linear-gradient(rgba(#000, .7), rgba(#000, .7)), url("https://images.pexels.com/photos/1204649/pexels-photo-1204649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .screen-four {
   padding: 2rem;
 
@@ -20,14 +27,13 @@
     // border: 5px solid green;
     // justify-items: center;
     .members {
-      // display: flex;
-      // flex-wrap: wrap;
-      // justify-content: space-between;
-      // justify-content: space-around;
-      // justify-content: flex-start;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-
+      //w/ Grid
+      // display: grid;
+      // grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+      // w/ Flex
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
       .item {
         // border: 1px solid red;
         text-align: center;

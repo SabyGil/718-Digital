@@ -1,3 +1,10 @@
+.bg-five {
+  background: linear-gradient(rgba(#000, .7), rgba(#000, .7)), url("https://images.pexels.com/photos/450035/pexels-photo-450035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .screen-five {
   overflow: auto;
   display: grid;

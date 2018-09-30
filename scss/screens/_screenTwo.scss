@@ -1,11 +1,11 @@
+.bg-two {
+  background: linear-gradient(rgba(#000, .7), rgba(#000, .7)), url("https://images.pexels.com/photos/162379/lost-places-pforphoto-leave-factory-162379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .screen-two {
-  // display: grid;
-  align-content: center;
-  // grid-template-rows: 1fr 1fr 1fr;
-  // grid-gap: 1rem;
-  // padding: 1rem;
-  // justify-items: center;
-  // align-items: center;
+  // align-content: center;
   grid-gap: 3rem;
   padding: 4rem;
 
@@ -42,6 +42,8 @@
     grid-row: 1 / 6;
     // padding-top: 2rem;
     @include imgBoxShadow;
+    background: url("https://images.pexels.com/photos/935870/pexels-photo-935870.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260") no-repeat center center;
+    background-size: cover;
 
     img {
       width: 100%;

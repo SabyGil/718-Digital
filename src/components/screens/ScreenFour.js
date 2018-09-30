@@ -42,7 +42,7 @@ class ScreenFour extends React.Component {
         {value => {
           const { members } = value.content
           return (
-            <div className='view-container' style={{'backgroundColor':'orange'}}>
+            <div className='view-container bg-four'>
               <div className="section-box screen-four">
                 <div className='screen-four__title'>
                   <h1>Members</h1>

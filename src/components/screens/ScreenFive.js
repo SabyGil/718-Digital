@@ -94,7 +94,7 @@ class ScreenFive extends React.Component {
         {value => {
           const { dispatch } = value;
           return (
-            <div className='view-container' style={{'backgroundColor':'#777'}}>
+            <div className='view-container bg-five'>
               <div className="section-box screen-five">
                 <div className='screen-five__contact-heading'>
                   <h1 className='display-1'>Contact</h1>
