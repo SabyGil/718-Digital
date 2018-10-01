@@ -40,14 +40,49 @@ export default class TechCarousel extends React.Component {
 		} = this.state;
 
 		const settings = {
+			// dots: true,
+			// infinite: false,
+			// speed: 500,
+			// slidesToShow: 3,
+			// slidesToScroll: 2,
+			// arrows: true,
+			// className: 'testing',
+			//--
+			// adaptiveHeight: true,
 			dots: true,
 			infinite: false,
 			speed: 500,
+			// slidesToShow: 4,
+			// slidesToScroll: 4,
 			slidesToShow: 3,
 			slidesToScroll: 2,
+			initialSlide: 0,
 			arrows: true,
-			className: 'testing',
-			// adaptiveHeight: true,
+			responsive: [{
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3,
+						infinite: false,
+						dots: true
+					}
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2,
+						initialSlide: 2
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}
+			]
 		};
 		return (
 			<Consumer>

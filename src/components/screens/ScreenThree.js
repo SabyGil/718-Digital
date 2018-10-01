@@ -142,7 +142,7 @@ class ThirdScreen extends React.Component {
 							bgFade: true,
 							fadeIn: false,
 						})}
-							timeout={1000}
+							timeout={700}
 							// timeout={450}
 							classNames='fade'
 							// unmountOnExit
