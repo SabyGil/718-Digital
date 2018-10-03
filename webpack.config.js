@@ -30,23 +30,21 @@ module.exports = {
 			},
 			{
 				test: /\.(png|jpg|jpeg|gif|pdf|woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-		    use: [{
-		      loader: 'file-loader',
-		      options: {
-		        name: '[path][name].[ext]'
-		      },
-		    }],
-		  },
+				use: [{
+					loader: 'file-loader',
+					options: {
+						name: '[path][name].[ext]'
+					},
+				}],
+			},
 			{
-					test: /\.(mov|mp4)$/,
-					use: [
-						{
-							loader: 'file-loader',
-							options: {
-								name: '[name].[ext]'
-							}
-						}
-					]
+				test: /\.(mov|mp4)$/,
+				use: [{
+					loader: 'file-loader',
+					options: {
+						name: '[name].[ext]'
+					}
+				}]
 			},
 			{
 				test: /\.s?[ac]ss$/,
@@ -67,6 +65,7 @@ module.exports = {
 			}
 		]
 	},
+	mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 	plugins: [
 		new HtmlWebPackPlugin({
 			template: "./public/index.html",

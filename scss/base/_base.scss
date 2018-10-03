@@ -30,9 +30,9 @@ body {
 :root {
   // --template-rows: repeat(8, minmax(min-content, 1fr));
   // --template-rows: 1fr repeat(8, min-content) 1fr;
-  --template-rows: repeat(8, min-content);
+  // --template-rows: repeat(8, min-content);
   // --template-cols: minmax(1rem, 5rem) repeat(8, minmax(min-content, 15rem)) minmax(1rem, 5rem);
-  --template-cols: repeat(8, 1fr);
+  // --template-cols: repeat(8, 1fr);
   --primary-purple: #6b579d;
 }
 //
@@ -74,9 +74,9 @@ ul {
   width: 80%;
   left: 10%;
   display: grid;
-  grid-template: var(--template-rows) / var(--template-cols);
-  // overflow-y: auto;
-  overflow-y: scroll;
+  // grid-template: var(--template-rows) / var(--template-cols);
+  grid-template: $template-rows / $template-cols;
+  overflow: auto;
 }
 
 .section-title {

@@ -11,12 +11,16 @@ import 'fullpage.js/vendors/scrolloverflow';
 const fullpageOptions = {
 	// callbacks: ['onLeave'],
 	// fixedElements: '#fixed',
+	// lazyLoading: false
+	//shows scroll bar for whole page
 	scrollOverflow: true,
 	anchors: ['Main', 'About', 'Services', 'Members', 'Contact'],
 	navigation: true,
 	controlArrows: true,
 	normalScrollElements: ".normal-scroll",
-	// lazyLoading: false
+	// scrollBar: true,
+	// setAutoScrolling: false,
+	// autoScrolling: false,
 };
 
 export default class FulpageParent extends React.Component {

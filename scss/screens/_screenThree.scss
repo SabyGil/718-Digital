@@ -1,13 +1,11 @@
 //Nav pill styles
-
-#pills-tab h2 {
-  font-size: 3rem;
-  cursor: pointer;
-}
-
 .nav-link {
   font-size: 4rem;
   text-transform: capitalize;
+  color: $primary-purple;
+  &:active {
+    color: white;
+  }
 }
 
 .collective {
@@ -32,11 +30,13 @@
   top: 90%;
 }
 
-.nav-link.active {
-  color: blue;
-  border: 5px solid blue;
-}
 // section three styles
+.bg-image {
+  background: linear-gradient(rgba(#000, .7), rgba(#000, .7)), url("https://images.unsplash.com/photo-1483090858014-15e35bb60ea5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=30103cd1fe3ff7fe3f78446cdd87e901&auto=format&fit=crop&w=633&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .screen-three {
   padding: 2rem;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 const ContactForm = ({
 	label,
@@ -15,16 +16,17 @@ const ContactForm = ({
     <input
       type={type}
       name={name}
-      // className={classnames('form-control form-control-lg', {
-      //   'is-invalid': error
-      // })}
-      className='form-control form-control-lg'
+      className={classnames('form-control form-control-lg', {
+        'is-invalid': error
+      })}
       placeholder={placeholder}
       value={value}
       onChange={onChange}
       errors={error}
     />
-
+		{error &&
+			<div className="invalid-feedback">{error}</div>
+		}
   </div>
 );
 

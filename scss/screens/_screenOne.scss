@@ -8,24 +8,6 @@
   display: none;
   /*need to adjust index to o go over certain content*/
 }
-@keyframes topLogo {
-  0% {
-    transform: translate(-10%, -50%);
-  }
-
-  100% {
-    transform: translate(-50%, -50%);
-  }
-}
-@keyframes fullLogo {
-  0% {
-    transform: translate(-50%, -50%);
-  }
-
-  100% {
-    transform: translate(-10%, -50%);
-  }
-}
 
 #video-container {
   position: absolute;
@@ -43,10 +25,28 @@
     min-width: 100%;
     transform: translate(-50%,-50%);
     z-index: -1;
-    // z-index: 10;
     &.fillWidth {
       min-width: 100%;
       min-height: 100%;
     }
+  }
+}
+
+@keyframes topLogo {
+  0% {
+    transform: translate(-10%, -50%);
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes fullLogo {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+
+  100% {
+    transform: translate(-10%, -50%);
   }
 }

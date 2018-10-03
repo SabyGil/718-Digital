@@ -2,6 +2,10 @@
 $primary-purple: #6b579d;
 $white: #fff;
 
+// Layout
+$template-rows: repeat(8, min-content);
+$template-cols: repeat(8, 1fr);
+
 // FONT VARIABLES
 $terminalFont: 'Inconsolata', monospace;
 $font-primary: 'Roboto', sans-serif;
@@ -10,7 +14,7 @@ $default-font-size: 2.5rem;
 $aside-font-size: 2rem;
 $theme-colors: (
   "primary": #0074d9,
-  "danger": blue
+  "danger": #e0115f
 ); //media-queries
 // --breakpoint-xs: 0;
 // --breakpoint-sm: 576px;
