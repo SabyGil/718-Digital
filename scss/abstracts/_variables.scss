@@ -1,31 +1,13 @@
 // COLOR VARIABLES
 $primary-purple: #6b579d;
-$white: #fff;
-
-// Layout
+$white: #fff; // Layout
 $template-rows: repeat(8, min-content);
-$template-cols: repeat(8, 1fr);
-
-// FONT VARIABLES
-$terminalFont: 'Inconsolata', monospace;
-$font-primary: 'Roboto', sans-serif;
-
+$template-cols: repeat(8, 1fr); // FONT VARIABLES
+$terminalFont: 'Inconsolata', monospace; // $font-primary: 'Roboto', sans-serif;
+$font-primary: 'Inconsolata', monospace;
 $default-font-size: 2.5rem;
 $aside-font-size: 2rem;
 $theme-colors: (
   "primary": #0074d9,
   "danger": #e0115f
-); //media-queries
-// --breakpoint-xs: 0;
-// --breakpoint-sm: 576px;
-// --breakpoint-md: 768px;
-// --breakpoint-lg: 992px;
-// --breakpoint-xl: 1200px;
-// @mixin mediaSm {
-//   @media screen and (max-width: )
-// }
-// @media (min-width(var(--breakpoint-sm))) {
-//   .content-secondary {
-//     display: block;
-//   }
-// }
+);
