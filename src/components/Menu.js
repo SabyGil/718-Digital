@@ -1,5 +1,6 @@
 import React from 'react';
 import Clock from './Clock';
+import classnames from 'classnames';
 
 class Menu extends React.Component {
 	state = {
@@ -20,13 +21,21 @@ class Menu extends React.Component {
 			hash
 		} = this.props;
 		const navLinks = ['About', 'Services', 'Members', 'Contact'];
-		return(
+		return (
 			<React.Fragment>
         <nav className="menu-container">
           <a className="active" className="logo" href='#Main'></a>
-          <ul>
+          <ul className={isOpen ? '' : 'center-menu'}>
             {isOpen ?
-              <div className='menu-list'>
+              // <div className='menu-list scale-in-tr'>
+              // <div className='menu-list scale-in-tr scale-out-tr'>
+              <div className={classnames('menu-list', {
+								// isOpen ? 'scale-in-tr' : 'scale-out-tr'
+								// 'scale-in-tr': isOpen === true : 'scale-out-tr'
+								'scale-in-tr': isOpen === true,
+								'scale-out-tr': isOpen === false
+							})
+							}>
                 <i className="fas fa-times" onClick={ this.toggleMenu}/>
 								<Clock />
               {navLinks.map((link, i) => {

@@ -9,7 +9,7 @@ import {
 import 'fullpage.js/vendors/scrolloverflow';
 
 const fullpageOptions = {
-	// callbacks: ['onLeave'],
+	callbacks: ['onLeave'],
 	// fixedElements: '#fixed',
 	// lazyLoading: false
 	//shows scroll bar for whole page
@@ -26,62 +26,30 @@ const fullpageOptions = {
 export default class FulpageParent extends React.Component {
 
 	componentDidMount() {
-		var pos_test = 0;
-		$("#logo").css({
-			width: "100%"
-		}, 1000);
-		$("#logo-container").css({
-			transform: "translate(-50%, -50%)",
-			top: "50%"
-		}, 1000);
 
-		$(window).on('hashchange', function(e) {
-			if(this.window.location.hash == "#Main") {
-				$("#logo").animate({
-					a: "-50%"
-				}, {
-					duration: 500,
-					step: function(now, fx) {
-						// console.log(now)
-						$("#logo-container").css({
-							transform: "translate(" + now + "%, -50%)"
-						}, 1000);
-					}
-				});
-				$("#logo").animate({
-					width: "100%"
-				}, 1000);
-				$("#logo-container").animate({
-					animation: "fullLogo 2s",
-					top: "50%"
-				}, 1000);
-			} else {
-				$("#logo").animate({
-					width: "20%"
-				}, 1000);
-				$("#logo").animate({
-					a: "-100%"
-				}, {
-					duration: 500,
-					step: function(now, fx) {
-						// console.log(now)
-						$("#logo-container").css({
-							transform: "translate(" + now + "%, -50%)"
-						}, 1000);
-					}
-				});
-				$("#logo-container").animate({
-					animation: "fullLogo 2s",
-					top: "10%"
-				}, 1000);
-			}
-		});
+	}
+
+	// onLeave = () => {
+	// 	console.log('hello')
+	// }
+	onLeave() {
+		console.log('hello')
+		const logoContainer = document.querySelector('#logo-container');
+		console.log(logoContainer.classList)
+		// if(this.props.location.hash !== '#Main') {
+		// 	logoContainer.classList.add('flicker-out-2')
+		// }
+		// if(this.props.location.hash === '#Main') {
+		// 	logoContainer.classList.remove('flicker-out-2')
+		// }
 	}
 
 	render() {
 		const {
 			hash
 		} = this.props.location
+		// console.log(hash)
+		// console.log(this.onLeave())
 		return (
 			<Consumer>
 				{value => {
@@ -89,7 +57,9 @@ export default class FulpageParent extends React.Component {
 					console.log(content, loader)
 					return (
 						<React.Fragment>
-							<div id="logo-container">
+							{/* <div id="logo-container" className={hash === 'Main'? { display: 'block'} : 'flicker-out-2'}> */}
+							<div id="logo-container" className={hash !== '#Main' ? 'flicker-out-1' : '' }>
+							{/* <div id="logo-container"> */}
 								<img src={ GIF } id="logo" alt="" />
 							</div>
 							{/* <div id="landing"></div> */}

@@ -16,6 +16,7 @@ const ContactForm = ({
     <input
       type={type}
       name={name}
+			id='test'
       className={classnames('form-control form-control-lg', {
         'is-invalid': error
       })}
