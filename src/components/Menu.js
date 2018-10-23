@@ -40,7 +40,7 @@ class Menu extends React.Component {
 								<Clock />
               {navLinks.map((link, i) => {
                   return (
-                    <li key={i}>
+                    <li key={i} className='fade-in-fwd'>
                       <a href={`#${link}`} className={hash === `#${link}` ? 'active' : '' }>{link}</a>
                     </li>
                   )

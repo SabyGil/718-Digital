@@ -5,8 +5,12 @@ import {
 } from '../../context';
 import api from '../../utils/api';
 import ContactForm from '../ContactForm';
+// import { ContactForm } from '../ContactForm';
+import { withRouter } from 'react-router-dom';
 
-class ScreenFive extends React.Component {
+// export const ScreenThree = withRouter(ThirdScreen)
+
+class FifthScreen extends React.Component {
 
 	state = {
 		name: '',
@@ -88,7 +92,9 @@ class ScreenFive extends React.Component {
 			message,
 			errors
 		} = this.state;
-
+		const {
+			hash
+		} = this.props.location
 		return (
 			<Consumer>
         {value => {
@@ -108,6 +114,7 @@ class ScreenFive extends React.Component {
 	                    value={name}
 	                    onChange={this.onChange}
 	                    error={errors.name}
+											hash={hash}
 										 />
 										<ContactForm
 	                     label='Email'
@@ -117,6 +124,7 @@ class ScreenFive extends React.Component {
 	                     value={email}
 	                     onChange={this.onChange}
 	                     error={errors.email}
+											 hash={hash}
 	                   />
                     <ContactForm
                       label='Message'
@@ -125,6 +133,7 @@ class ScreenFive extends React.Component {
                       onChange={this.onChange}
                       value={message}
                       error={errors.message}
+											hash={hash}
                      />
                     <input type="submit" value='Submit' className="btn btn-block p-3 --purple" />
                   </form>
@@ -148,5 +157,8 @@ class ScreenFive extends React.Component {
 		)
 	}
 }
+
+const ScreenFive = withRouter(FifthScreen)
+
 
 export default ScreenFive;

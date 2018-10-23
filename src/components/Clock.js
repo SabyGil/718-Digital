@@ -28,7 +28,7 @@ export default class Clock extends React.Component {
 		} = this.state;
 		return (
 			<React.Fragment>
-				<div id='time-display'>Time: {date.toLocaleTimeString()}</div>
+				<div id='time-display' className='fade-in-fwd'>Time: {date.toLocaleTimeString()}</div>
 			</React.Fragment>
 		);
 	}
