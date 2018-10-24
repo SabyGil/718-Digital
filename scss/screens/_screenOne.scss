@@ -1,15 +1,19 @@
 #logo-container {
   position: fixed;
+  top: 50%;
   left: 50%;
-  // -webkit-transform: translate(-50%,-50%);
-  // -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
   z-index: 1;
   // display: none;
   /*need to adjust index to o go over certain content*/
   transform: translate(-50%, -50%);
-  top: 50%;
+  // transform: translate(-10%, -50%);
 }
+// #logo-sm {
+//   border: 5px solid green;
+//   position: absolute;
+//   height: 20rem;
+//   width: 20rem;
+// }
 
 #video-container {
   position: absolute;

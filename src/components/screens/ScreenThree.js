@@ -130,7 +130,7 @@ class ThirdScreen extends React.Component {
 
         {/* if route === /, collective is default */}
         <Route exact path='/' render={() => (
-          <Redirect to='/collective'/>
+          <Redirect to='/collective#Main'/>
         )}/>
         {/* otherwise render nested paths */}
 

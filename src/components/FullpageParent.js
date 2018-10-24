@@ -54,14 +54,16 @@ export default class FulpageParent extends React.Component {
 			<Consumer>
 				{value => {
 					const { content, loader } = value;
-					console.log(content, loader)
+					// console.log(content, loader)
 					return (
 						<React.Fragment>
 							{/* <div id="logo-container" className={hash === 'Main'? { display: 'block'} : 'flicker-out-2'}> */}
+
 							<div id="logo-container" className={hash !== '#Main' ? 'flicker-out-1' : '' }>
-							{/* <div id="logo-container"> */}
 								<img src={ GIF } id="logo" alt="" />
 							</div>
+
+							{/* <div id='logo-sm' className={hash !== '#Main' ? 'fade-in-fwd' : '' }>TEST</div> */}
 							{/* <div id="landing"></div> */}
 							{/* {this.state.loader ?
 								<h1>LOADING...</h1>
@@ -76,6 +78,7 @@ export default class FulpageParent extends React.Component {
 									<i className="fas fa-chevron-up"></i>
 								</a>
 							}
+
 							<React.Fragment>
 								<Menu navLinks={fullpageOptions.anchors} hash={hash}/>
 								<FullpageWrapper {...fullpageOptions} content={content}/>
