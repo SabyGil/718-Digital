@@ -135,7 +135,7 @@ class FifthScreen extends React.Component {
                       error={errors.message}
 											hash={hash}
                      />
-                    <input type="submit" value='Submit' className="btn btn-block p-3 --purple" />
+                    <input type="submit" value='Submit' className="btn btn-block p-3 --submit-btn" />
                   </form>
                 </div>
                 <div className='screen-five__social-media'>

@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-// export const ScreenThree = withRouter(ThirdScreen)
-// export const ContactForm = withRouter()
-
-
 const ContactForm = ({
 	label,
 	name,
@@ -17,14 +13,11 @@ const ContactForm = ({
 	hash
 }) => (
 	<div className="form-group">
-		{/* {console.log(this.state)} */}
     <label htmlFor="name">{label}:</label>
     <input
       type={type}
       name={name}
-			// id='test'
 			id={hash == "#Contact" ? 'form-transition' : ''}
-
       className={classnames('form-control form-control-lg --form-styles', {
         'is-invalid': error,
       })}
