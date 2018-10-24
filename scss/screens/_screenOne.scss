@@ -8,12 +8,20 @@
   transform: translate(-50%, -50%);
   // transform: translate(-10%, -50%);
 }
-// #logo-sm {
-//   border: 5px solid green;
-//   position: absolute;
-//   height: 20rem;
-//   width: 20rem;
-// }
+
+#logo-sm {
+  border: 5px solid green;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 20rem;
+  width: 20rem;
+  z-index: 2;
+}
+
+.hide-menu {
+  display: none;
+}
 
 #video-container {
   position: absolute;

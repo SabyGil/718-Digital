@@ -33,6 +33,16 @@ export class Provider extends Component {
       loader: false
     });
   }
+  // componentDidMount(){
+  //  api.getContent()
+  //    .then(res => this.setState({
+  //        content: res.data,
+  //        loader: false
+  //      }))
+  //      .catch(error => {
+  //       console.log(error)
+  //     })
+  // }
 
   render(){
     // console.log(this.state)

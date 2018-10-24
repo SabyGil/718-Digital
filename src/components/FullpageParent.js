@@ -63,7 +63,10 @@ export default class FulpageParent extends React.Component {
 								<img src={ GIF } id="logo" alt="" />
 							</div>
 
-							{/* <div id='logo-sm' className={hash !== '#Main' ? 'fade-in-fwd' : '' }>TEST</div> */}
+							<div id='logo-sm' className={hash === '#Main' ? 'hide-menu' : 'fade-in-fwd' }>TEST
+								{/* <img src={ GIF } id="logo" alt="" /> */}
+
+							</div>
 							{/* <div id="landing"></div> */}
 							{/* {this.state.loader ?
 								<h1>LOADING...</h1>
