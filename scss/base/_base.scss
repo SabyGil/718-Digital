@@ -72,16 +72,33 @@ ul {
   // grid-template: var(--template-rows) / var(--template-cols);
   grid-template: $template-rows / $template-cols;
   overflow: auto;
+
+  svg,
+  svg rect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+  }
+
+  svg rect {
+    stroke: white;
+    stroke-width: 4;
+    // stroke-dasharray: 40%;
+    animation: test 3s linear;
+  }
 }
 
 .section-box:before {
-  content: '';
-  position: absolute;
   // border: 10px solid red;
-  box-shadow: inset 0 0 1.5rem white, 0 0 1.5rem white;
-  border: 2px solid white;
-  width: 100%;
-  animation: animate 3s linear infinite;
+  // content: '';
+  // position: absolute;
+  // box-shadow: inset 0 0 1.5rem white, 0 0 1.5rem white;
+  // border: 2px solid white;
+  // width: 100%;
+  // animation: animate 3s linear infinite;
 }
 
 .--form-styles {
@@ -91,7 +108,16 @@ ul {
 }
 
 #form-transition {
-  animation: animate 3s linear;
+  animation: animate 1.5s linear;
+}
+@keyframes test {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
 }
 @keyframes animate {
   0% {
@@ -99,7 +125,7 @@ ul {
     transform-origin: left;
   }
 
-  50% {
+  100% {
     transform: scaleX(1);
     transform-origin: left;
   }
