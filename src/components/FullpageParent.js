@@ -54,7 +54,7 @@ export default class FulpageParent extends React.Component {
 			<Consumer>
 				{value => {
 					const { content, loader } = value;
-					// console.log(content, loader)
+					console.log(content, loader)
 					return (
 						<React.Fragment>
 							{/* <div id="logo-container" className={hash === 'Main'? { display: 'block'} : 'flicker-out-2'}> */}

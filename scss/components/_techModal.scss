@@ -106,13 +106,13 @@
     grid-template-areas: 'title title''img info' 'client tech';
   }
 }
-
 // @media (max-width: 56.25em){
-@media (max-width: 70em){
+@media (max-width: 70em) {
   .tech-modal {
     height: 80vh;
     width: 80vw;
   }
+
   .modal-outline {
     // width: 100vw;
   }

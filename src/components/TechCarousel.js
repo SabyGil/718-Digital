@@ -54,6 +54,7 @@ export default class TechCarousel extends React.Component {
 			speed: 500,
 			// slidesToShow: 4,
 			// slidesToScroll: 4,
+			dontAnimate: true,
 			slidesToShow: 3,
 			slidesToScroll: 2,
 			initialSlide: 0,
