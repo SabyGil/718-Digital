@@ -1,11 +1,20 @@
 //Nav pill styles
+
 .nav-link {
   font-size: 4rem;
   text-transform: capitalize;
-  color: $primary-purple;
+  // color: $primary-purple;
+  color: white;
+
   &:active {
-    color: white;
+    // color: red;
   }
+
+  :link {}
+}
+
+.active {
+  // border: 1px solid orange;
 }
 
 .collective {
@@ -29,8 +38,8 @@
   position: absolute;
   top: 90%;
 }
-
 // section three styles
+
 .bg-image {
   background: linear-gradient(rgba(#000, .7), rgba(#000, .7)), url("https://images.unsplash.com/photo-1483090858014-15e35bb60ea5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=30103cd1fe3ff7fe3f78446cdd87e901&auto=format&fit=crop&w=633&q=80");
   background-size: cover;
@@ -126,9 +135,7 @@
       text-align: center;
     }
 
-    .testing {
-
-    }
+    .testing {}
   }
 }
 // @media screen and (max-width: 56.25em) {

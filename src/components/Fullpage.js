@@ -14,9 +14,16 @@ import ScreenFive from './screens/ScreenFive';
 https://github.com/alvarotrigo/fullPage.js/blob/dev/vendors/scrolloverflow.js
 */
 
+// class Fullpage extends React.Component {
+//   onLeave(origin, destination, direction) {
+//     // arguments are mapped in order of fullpage.js callback arguments
+//     // do something with the event
+//   }
+
 const FullpageWrapper = fullpageProps => (
 		<ReactFullpage
     {...fullpageProps}
+		// onLeave={this.onLeave.bind(this)}
     render={({state, fullpageApi}) => {
       return (
         <React.Fragment>

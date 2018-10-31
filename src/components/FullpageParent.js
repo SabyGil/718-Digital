@@ -21,6 +21,7 @@ const fullpageOptions = {
 	// scrollBar: true,
 	// setAutoScrolling: false,
 	// autoScrolling: false,
+	licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE'
 };
 
 export default class FulpageParent extends React.Component {
@@ -84,7 +85,7 @@ export default class FulpageParent extends React.Component {
 
 							<React.Fragment>
 								<Menu navLinks={fullpageOptions.anchors} hash={hash}/>
-								<FullpageWrapper {...fullpageOptions} content={content}/>
+								<FullpageWrapper {...fullpageOptions} content={content} />
 							</React.Fragment>
 						</React.Fragment>
 					)}

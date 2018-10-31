@@ -41,7 +41,7 @@ const users = [{
 
 class ScreenFour extends React.Component {
 	state = {
-		activeModal: null
+		activeModal: 0
 	}
 
 	handleClick = (e, index, dispatch) => {
@@ -60,26 +60,22 @@ class ScreenFour extends React.Component {
 	}
 
 	nextModal = (e, index, members) => {
-		if(this.state.activeModal < members.length - 1){
+		if(this.state.activeModal < members.length - 1 ){
 
 			this.setState({
 				activeModal: index + 1
-			}, () => {
-				console.log(this.state.activeModal)
 			})
 		}
 	}
 
 	prevModal = (e, index, members) => {
-		if(this.state.activeModal > 1){
-
+		if(this.state.activeModal > 0){
 			this.setState({
 				activeModal: index - 1
-			}, () => {
-				console.log(this.state.activeModal)
 			})
 		}
 	}
+
 	render() {
 		const {
 			activeModal
@@ -96,69 +92,64 @@ class ScreenFour extends React.Component {
                   <h1>Members</h1>
                 </div>
                 <div className='screen-four__content'>
-                  <ul className='members'>
                     {members && members.map( (member, index) => {
                       const {id, about, name, stack } = member
                       return (
-                        // <ul key={id} className='member'>
-												<React.Fragment>
+                        <ul key={id} className='members'>
+	                        <li className="item" key={id}>
+	                          <ul>
+	                          <li>
+	                            <img
+	                              src={'https://s3.amazonaws.com/uifaces/faces/twitter/mghoz/128.jpg'}
+	                              alt=""
+	                              className='avatar'
+																onClick={e => this.handleClick(e, index, dispatch)}
+	                            />
 
-                        <li className="item" key={id}>
-                          <ul>
-                          <li>
-                            <img
-                              src={'https://s3.amazonaws.com/uifaces/faces/twitter/mghoz/128.jpg'}
-                              alt=""
-                              className='avatar'
-															onClick={e => this.handleClick(e, index, dispatch)}
-                            />
+	                          </li>
+	                          <li>{name}</li>
+	                          <li>{about}</li>
+	                        </ul>
+	                      </li>
+												{/*  */}
+												{activeModal === index ?
 
-                          </li>
-                          <li>{name}</li>
-                          <li>{about}</li>
-                        </ul>
-                      </li>
-											{/*  */}
-											{activeModal === index ?
-
-											<Modal
-												className='member-modal normal-scroll'
-												style={{ zIndex: '20'}}
-												isOpen={modalIsOpen}
-												// onRequestClose={()=>dispatch({type:"CLOSE_MODAL"})}
-												onRequestClose={this.hideModal}
-												overlayClassName='overlay'
-												contentLabel="modal"
-												closeTimeoutMS={500}
-												>
-													{/* <div className="modal-outline">
-														<div className='modal-title'>PROJECT</div>
+												<Modal
+													className='member-modal normal-scroll'
+													style={{ zIndex: '20'}}
+													isOpen={modalIsOpen}
+													// onRequestClose={()=>dispatch({type:"CLOSE_MODAL"})}
+													onRequestClose={this.hideModal}
+													overlayClassName='overlay'
+													contentLabel="modal"
+													closeTimeoutMS={500}
+													>
+														{/* <div className="modal-outline">
+															<div className='modal-title'>PROJECT</div>
+															<span>{name}</span>
+															<span>{about}</span>
+														</div> */}
 														<span>{name}</span>
 														<span>{about}</span>
-													</div> */}
-													<span>{name}</span>
-													<span>{about}</span>
-													<button onClick={()=>dispatch({type:"CLOSE_MODAL"})} className='modal-close-btn'>
-															<i className="fas fa-times" />
-													</button>
+														<button onClick={()=>dispatch({type:"CLOSE_MODAL"})} className='modal-close-btn'>
+																<i className="fas fa-times" />
+														</button>
 
-													{activeModal > 1 ?
-														<i className="fas fa-chevron-left" onClick={e => this.prevModal(e, index, members)}/>
-														: null
-													}
-													{activeModal < members.length - 1 ?
-														<i className="fas fa-chevron-right" onClick={e => this.nextModal(e, index, members)}/>
-														: null
-													}
+														{activeModal >= 1 ?
+															<i className="fas fa-chevron-left" onClick={e => this.prevModal(e, index, members)}/>
+															: null
+														}
+														{activeModal < members.length - 1 ?
+															<i className="fas fa-chevron-right" onClick={e => this.nextModal(e, index, members)}/>
+															: null
+														}
 
-										 </Modal>
-										 : null}
-										</React.Fragment>
-
+											 </Modal>
+											 : null}
+										</ul>
                       )
                     })
                     }
-                  </ul>
                 </div>
               </div>
             </div>

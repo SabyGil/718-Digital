@@ -75,7 +75,14 @@ const NestedLink = (props) => {
 		<div className="nav nav-pills mb-3">
     {links.map(link => {
       return (
-        <NavLink key={link} activeClassName="active" to={`${link}#Services`} className={`${link} nav-link`}>
+        <NavLink
+					key={link}
+					activeClassName="active"
+					to={`${link}#Services`}
+					className={`${link} nav-link`}
+					style={link === props.selectedLink ? {color: '#6b579d'} : null}
+					onClick={props.onSelect.bind(null, link)}
+					>
           {link}
         </NavLink>
       )
@@ -88,7 +95,8 @@ class ThirdScreen extends React.Component {
 	state = {
 		// isActive: null,
 		fadeIn: true,
-		bgFade: false
+		bgFade: false,
+		selectedLink: 'collective'
 	}
 
 	// componentDidMount() {
@@ -104,6 +112,12 @@ class ThirdScreen extends React.Component {
 			bgFade: !this.state.bgFade,
 		});
 	};
+
+	updateLink = (link) => {
+	 this.setState({
+		 selectedLink: link,
+	 })
+ }
 
 	render() {
 		const {
@@ -139,8 +153,9 @@ class ThirdScreen extends React.Component {
             key={location.key}
 						onEnter={()=> this.setState({
 							// isActive: true,
-							bgFade: true,
-							fadeIn: false,
+							//--
+							// bgFade: true,
+							// fadeIn: false,
 						})}
 							timeout={700}
 							// timeout={450}
@@ -148,15 +163,19 @@ class ThirdScreen extends React.Component {
 							// unmountOnExit
 							onExited={() => this.setState({
 								// isActive: false,
-								fadeIn: true,
-								bgFade: false
+								//--
+								// fadeIn: true,
+								// bgFade: false
 							})}>
             <Route path='/:routeId' component={Path}/>
           </CSSTransition>
         </TransitionGroup>
 
         {/* Links around section box */}
-        <NestedLink/>
+        <NestedLink
+					selectedLink={this.state.selectedLink}
+					onSelect={this.updateLink}
+				/>
 				</Fade>
 			</React.Fragment>
 		);
