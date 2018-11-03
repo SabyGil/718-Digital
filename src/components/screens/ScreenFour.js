@@ -49,7 +49,7 @@ class ScreenFour extends React.Component {
 			activeModal: index
 		})
 		dispatch({
-			type: "OPEN_MODAL"
+			type: "OPEN_MEMBERS_MODAL"
 		})
 	}
 
@@ -84,7 +84,7 @@ class ScreenFour extends React.Component {
 			<Consumer>
         {value => {
           const { members } = value.content
-					const { dispatch, modalIsOpen } = value;
+					const { dispatch, MembersModalIsOpen } = value;
           return (
             <div className='view-container bg-four'>
               <div className="section-box screen-four">
@@ -92,10 +92,10 @@ class ScreenFour extends React.Component {
                   <h1>Members</h1>
                 </div>
                 <div className='screen-four__content'>
+									<ul className='members'>
                     {members && members.map( (member, index) => {
                       const {id, about, name, stack } = member
                       return (
-                        <ul key={id} className='members'>
 	                        <li className="item" key={id}>
 	                          <ul>
 	                          <li>
@@ -110,14 +110,13 @@ class ScreenFour extends React.Component {
 	                          <li>{name}</li>
 	                          <li>{about}</li>
 	                        </ul>
-	                      </li>
 												{/*  */}
 												{activeModal === index ?
 
 												<Modal
 													className='member-modal normal-scroll'
 													style={{ zIndex: '20'}}
-													isOpen={modalIsOpen}
+													isOpen={MembersModalIsOpen}
 													// onRequestClose={()=>dispatch({type:"CLOSE_MODAL"})}
 													onRequestClose={this.hideModal}
 													overlayClassName='overlay'
@@ -129,9 +128,9 @@ class ScreenFour extends React.Component {
 															<span>{name}</span>
 															<span>{about}</span>
 														</div> */}
-														<span>{name}</span>
-														<span>{about}</span>
-														<button onClick={()=>dispatch({type:"CLOSE_MODAL"})} className='modal-close-btn'>
+														{/* <span>{name}</span>
+														<span>{about}</span> */}
+														<button onClick={()=>dispatch({type:"CLOSE_MEMBERS_MODAL"})} className='modal-close-btn'>
 																<i className="fas fa-times" />
 														</button>
 
@@ -143,13 +142,19 @@ class ScreenFour extends React.Component {
 															<i className="fas fa-chevron-right" onClick={e => this.nextModal(e, index, members)}/>
 															: null
 														}
+														<MemberInfo
+															name={name}
+															// profileImg={img}
+															about={about}
+														/>
 
 											 </Modal>
 											 : null}
-										</ul>
+										 </li>
                       )
                     })
                     }
+									</ul>
                 </div>
               </div>
             </div>
@@ -158,6 +163,26 @@ class ScreenFour extends React.Component {
       </Consumer>
 		)
 	}
+}
+
+const MemberInfo = props => {
+	return (
+		<React.Fragment>
+		{/* // <div className=""> */}
+
+			{/* <img className='member-modal__img' src="" alt=""/> */}
+			<img
+				src={'https://s3.amazonaws.com/uifaces/faces/twitter/mghoz/128.jpg'}
+				alt=""
+				className='member-modal__img'
+			/>
+			<div className="member-modal__content">
+				<h1>{props.name}</h1>
+				<p>{props.about}</p>
+			</div>
+		{/* // </div> */}
+		</React.Fragment>
+	)
 }
 
 export default ScreenFour;

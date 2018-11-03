@@ -15,6 +15,14 @@ const reducer = (state, action) => {
       ...state,
       modalIsOpen: false
     }
+    case 'OPEN_MEMBERS_MODAL':
+    return {
+      MembersModalIsOpen: true
+    }
+    case 'CLOSE_MEMBERS_MODAL':
+    return {
+      MembersModalIsOpen: false
+    }
   };
 }
 

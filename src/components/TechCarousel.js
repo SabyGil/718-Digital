@@ -105,8 +105,8 @@ export default class TechCarousel extends React.Component {
 													<Modal
 														className='tech-modal normal-scroll'
 														isOpen={modalIsOpen}
-														// onRequestClose={()=>dispatch({type:"CLOSE_MODAL"})}
-														onRequestClose={this.hideModal}
+														onRequestClose={()=>dispatch({type:"CLOSE_MODAL"})}
+														// onRequestClose={this.hideModal}
 														overlayClassName='overlay'
 													  contentLabel="modal"
 														closeTimeoutMS={500}
