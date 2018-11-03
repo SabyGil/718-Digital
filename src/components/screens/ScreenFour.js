@@ -60,7 +60,7 @@ class ScreenFour extends React.Component {
 	}
 
 	nextModal = (e, index, members) => {
-		if(this.state.activeModal < members.length - 1 ){
+		if(this.state.activeModal < members.length - 1) {
 
 			this.setState({
 				activeModal: index + 1
@@ -69,7 +69,7 @@ class ScreenFour extends React.Component {
 	}
 
 	prevModal = (e, index, members) => {
-		if(this.state.activeModal > 0){
+		if(this.state.activeModal > 0) {
 			this.setState({
 				activeModal: index - 1
 			})
@@ -177,9 +177,14 @@ const MemberInfo = props => {
 				className='member-modal__img'
 			/>
 			<div className="member-modal__content">
-				<h1>{props.name}</h1>
+				<div className="member-modal__title">
+					<h1>{props.name}</h1>
+				</div>
 				<p>{props.about}</p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt vel possimus quaerat, nisi, quasi distinctio velit praesentium laborum architecto adipisci voluptatum error quisquam. Fugit quis, non velit quam consequatur.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quod, deleniti a molestias commodi nemo id pariatur velit facere quos officia, necessitatibus dolorum voluptatem distinctio tempora sit qui corporis laboriosam.
 			</div>
+
 		{/* // </div> */}
 		</React.Fragment>
 	)
