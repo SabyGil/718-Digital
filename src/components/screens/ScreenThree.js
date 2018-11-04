@@ -18,6 +18,7 @@ import {
 import {
 	Fade
 } from "reactstrap";
+import Media from "react-media";
 
 const routeInfo = [{
 		id: '1',
@@ -71,7 +72,7 @@ const routeInfo = [{
 
 const NestedLink = (props) => {
 	const links = ['clients', 'collective', 'consulting'];
-	console.log(props.selectedLink, 'selected')
+	// console.log(props.selectedLink, 'selected')
 	return (
 		<div className="nav nav-pills mb-3">
     {links.map(link => {
@@ -140,7 +141,7 @@ class ThirdScreen extends React.Component {
 		// 	bgHook.classList.remove('bg-animation')
 		// }
 		// console.log(this.state.selectedLink, 'here')
-		console.log(location)
+		// console.log(location)
 		return (
 			<React.Fragment>
 				<Fade in={this.state.bgFade} tag="div"  className="bg-static" />
@@ -171,15 +172,24 @@ class ThirdScreen extends React.Component {
 								// fadeIn: true,
 								// bgFade: false
 							})}>
-            <Route path='/:routeId' component={Path}/>
+            {/* <Route path='/:routeId' component={Path}/> */}
+            <Route path='/:routeId' render={props => <Path {...props}
+							selectedLink={this.state.selectedLink}
+							onSelect={this.updateLink}
+						/>}/>
           </CSSTransition>
         </TransitionGroup>
 
         {/* Links around section box */}
-        <NestedLink
-					selectedLink={this.state.selectedLink}
-					onSelect={this.updateLink}
-				/>
+				 <Media query="(min-width: 900px)">
+					 {matches =>
+							matches ?
+						 <NestedLink
+							 selectedLink={this.state.selectedLink}
+							 onSelect={this.updateLink}
+						 /> : null
+					 }
+				 </Media>
 				</Fade>
 			</React.Fragment>
 		);
@@ -189,21 +199,27 @@ class ThirdScreen extends React.Component {
 export const ScreenThree = withRouter(ThirdScreen)
 
 const Path = ({
-	match
+	match,
+	selectedLink,
+	onSelect
 }) => {
 	const route = routeInfo.find(({
 		heading
 	}) => heading === match.params.routeId);
 	return (
 		<div className='section-box screen-three normal-scroll'>
+			<Media query="(max-width: 899px)">
+				{matches =>
+					 matches ?
+					<NestedLink
+						selectedLink={selectedLink}
+						onSelect={onSelect}
+					/>: null
+				}
+			</Media>
       <div className='screen-three__img'>
-        lorem ipsum dipsum
-        eritatis, earum, magnam.
-        lorem ipsum dipsum
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
-        lorem ipsum dipsum
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
-        <h1>{route.contentTwo}</h1>
+				<img src='https://images.pexels.com/photos/935870/pexels-photo-935870.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260' alt='screen three image' />
+        <h1 className='overImage'>{route.contentTwo}</h1>
       </div>
       <div className='screen-three__aside'>
         <h1>{route.contentOne}</h1>

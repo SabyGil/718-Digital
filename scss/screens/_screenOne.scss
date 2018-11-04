@@ -36,13 +36,12 @@
 @include respond(media-md) {
   #logo-sm {
     position: absolute;
-    top: 15%;
+    top: 12%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
   .logo-styles {
-    border: 10px solid red;
-    display: block;
+    // display: block;
   }
 }
 //---
