@@ -35,9 +35,20 @@
     padding: 4rem 15rem;
 
     .form-group {
+      .form-control{
+        background-color: transparent;
+        border: none;
+        border-bottom:2px solid white;
+       .form-control-lg {
+         border: 1px solid blue;
+       }
+     }
       label[for=name] {
         color: white;
         font-weight: 700;
+      }
+      input {
+        color: white;
       }
     }
 
@@ -46,11 +57,23 @@
       font-size: 2rem;
     }
 
+    form {
+      input {
+        &.btn {
+          background: $primary-purple;
+          width: 35rem;
+          text-align: center ;
+          margin: 4rem auto 0 ;
+        }
+      }
+    }
+
     .--submit-btn {
-      background: $primary-purple;
-      width: 35rem !important;
-      text-align: center !important;
-      margin: 4rem auto 0 !important;
+      // background: $primary-purple;
+      // // width: 35rem !important;
+      // width: 35rem;
+      // text-align: center !important;
+      // margin: 4rem auto 0 !important;
     }
   }
 

@@ -59,8 +59,8 @@ ul {
 //global classes
 
 .section-box {
-  // border: 2px solid white;
-  // box-shadow: inset 0 0 1.5rem white, 0 0 1.5rem white;
+  border: 2px solid white;
+  box-shadow: inset 0 0 1.5rem white, 0 0 1.5rem white;
   font-size: 2rem;
   // height: 65%;
   height: 100%;
@@ -111,12 +111,6 @@ ul {
   // border: 2px solid white;
   // width: 100%;
   // animation: animate 3s linear infinite;
-}
-
-.--form-styles {
-  background: none !important;
-  border: none !important;
-  border-bottom: 2px solid white !important;
 }
 
 #form-transition {

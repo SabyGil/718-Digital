@@ -69,7 +69,7 @@ export default class TechCarousel extends React.Component {
 					}
 				},
 				{
-					breakpoint: 600,
+					breakpoint: 900,
 					settings: {
 						slidesToShow: 2,
 						slidesToScroll: 2,
@@ -77,10 +77,11 @@ export default class TechCarousel extends React.Component {
 					}
 				},
 				{
-					breakpoint: 480,
+					breakpoint: 750,
 					settings: {
 						slidesToShow: 1,
-						slidesToScroll: 1
+						slidesToScroll: 1,
+						dontAnimate: true,
 					}
 				}
 			]

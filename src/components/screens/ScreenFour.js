@@ -76,6 +76,15 @@ class ScreenFour extends React.Component {
 		}
 	}
 
+	prevModalKeyPress = e => {
+		console.log(e.keyCode, 'called');
+		// console.log('called');
+		//left = 37, right = 39
+		/*
+		  if keycode equals 37 && currentIndex !== 0
+		*/
+	}
+
 	render() {
 		const {
 			activeModal
@@ -122,6 +131,8 @@ class ScreenFour extends React.Component {
 													overlayClassName='overlay'
 													contentLabel="modal"
 													closeTimeoutMS={500}
+													// onKeyDown={this.prevModalKeyPress}
+													// tabIndex="0"
 													>
 														{/* <div className="modal-outline">
 															<div className='modal-title'>PROJECT</div>
@@ -135,7 +146,14 @@ class ScreenFour extends React.Component {
 														</button>
 
 														{activeModal >= 1 ?
-															<i className="fas fa-chevron-left" onClick={e => this.prevModal(e, index, members)}/>
+															<i
+																className="fas fa-chevron-left"
+																onClick={e => this.prevModal(e, index, members)}
+																// onKeyDown={this.prevModalKeyPress}
+																// onKeyDown={() => this.prevModalKeyPress()}
+																// onKeyDown={console.log('arrow right')}
+																// tabIndex="0"
+															/>
 															: null
 														}
 														{activeModal < members.length - 1 ?

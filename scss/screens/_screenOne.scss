@@ -23,6 +23,30 @@
   display: none;
 }
 
+//---
+.logo-styles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border: 1px solid white;
+  height: 100%;
+}
+
+@include respond(media-md) {
+  #logo-sm {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .logo-styles {
+    border: 10px solid red;
+    display: block;
+  }
+}
+//---
+
 #video-container {
   position: absolute;
   top: 0;

@@ -71,6 +71,7 @@ const routeInfo = [{
 
 const NestedLink = (props) => {
 	const links = ['clients', 'collective', 'consulting'];
+	console.log(props.selectedLink, 'selected')
 	return (
 		<div className="nav nav-pills mb-3">
     {links.map(link => {
@@ -81,6 +82,7 @@ const NestedLink = (props) => {
 					to={`${link}#Services`}
 					className={`${link} nav-link`}
 					style={link === props.selectedLink ? {color: '#6b579d'} : null}
+					// style={`/${link}` === props.selectedLink ? {color: '#6b579d'} : null}
 					onClick={props.onSelect.bind(null, link)}
 					>
           {link}
@@ -97,6 +99,7 @@ class ThirdScreen extends React.Component {
 		fadeIn: true,
 		bgFade: false,
 		selectedLink: 'collective'
+		// selectedLink: location.pathname
 	}
 
 	// componentDidMount() {
@@ -114,14 +117,14 @@ class ThirdScreen extends React.Component {
 	};
 
 	updateLink = (link) => {
-	 this.setState({
-		 selectedLink: link,
-	 })
- }
+		this.setState({
+			selectedLink: link,
+		})
+	}
 
 	render() {
 		const {
-			location
+			location,
 		} = this.props;
 		const route = routeInfo.find(({
 			heading
@@ -136,7 +139,8 @@ class ThirdScreen extends React.Component {
 		// if(isActive === false) {
 		// 	bgHook.classList.remove('bg-animation')
 		// }
-		// console.log(location.pathname)
+		// console.log(this.state.selectedLink, 'here')
+		console.log(location)
 		return (
 			<React.Fragment>
 				<Fade in={this.state.bgFade} tag="div"  className="bg-static" />
@@ -209,9 +213,11 @@ const Path = ({
       </div>
       <div className='screen-three__content'>
         <h1>{route.heading}</h1>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+				<div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
         lorem ipsum dipsum
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.</p>
+			</div>
       </div>
 
       <div className='screen-three__projects-container'>

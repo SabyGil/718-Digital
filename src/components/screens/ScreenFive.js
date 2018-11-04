@@ -6,7 +6,9 @@ import {
 import api from '../../utils/api';
 import ContactForm from '../ContactForm';
 // import { ContactForm } from '../ContactForm';
-import { withRouter } from 'react-router-dom';
+import {
+	withRouter
+} from 'react-router-dom';
 
 // export const ScreenThree = withRouter(ThirdScreen)
 
@@ -144,6 +146,9 @@ class FifthScreen extends React.Component {
                   </div>
                   <div className='circle'>
                     <i className="fab fa-google-plus-g"/>
+                  </div>
+                  <div className='circle'>
+                    <i className="fab fa-facebook-square"/>
                   </div>
                   <div className='circle'>
                     <i className="fab fa-facebook-square"/>

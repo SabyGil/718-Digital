@@ -42,6 +42,7 @@
       }
 
       .avatar {
+        cursor: pointer;
         width: 15rem;
         border-radius: 50%;
       }
@@ -105,6 +106,7 @@
     // transform: translate(-50%, -50%);
     transform: translate(0%, -50%);
     // left: 1rem;
+    cursor: pointer;
   }
 
   .fa-chevron-left {
@@ -115,5 +117,6 @@
     font-size: 4rem;
     // transform: translate(-50%, -50%);
     transform: translate(0%, -50%);
+    cursor: pointer;
   }
 }

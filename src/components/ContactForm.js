@@ -18,7 +18,7 @@ const ContactForm = ({
       type={type}
       name={name}
 			id={hash == "#Contact" ? 'form-transition' : ''}
-      className={classnames('form-control form-control-lg --form-styles', {
+      className={classnames('form-control form-control-lg', {
         'is-invalid': error,
       })}
       placeholder={placeholder}
