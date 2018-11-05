@@ -103,6 +103,7 @@ class FifthScreen extends React.Component {
           const { dispatch } = value;
           return (
             <div className='view-container bg-five'>
+							<div id={hash == "#Contact" ? 'border-animation' : ''}/>
               <div className="section-box screen-five">
                 <div className='screen-five__contact-heading'>
                   <h1 className='display-1'>Contact</h1>

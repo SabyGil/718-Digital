@@ -33,10 +33,10 @@ export default class FulpageParent extends React.Component {
 	// onLeave = () => {
 	// 	console.log('hello')
 	// }
-	onLeave() {
+	onLeave = () => {
 		console.log('hello')
-		const logoContainer = document.querySelector('#logo-container');
-		console.log(logoContainer.classList)
+		// const logoContainer = document.querySelector('#logo-container');
+		// console.log(logoContainer.classList)
 		// if(this.props.location.hash !== '#Main') {
 		// 	logoContainer.classList.add('flicker-out-2')
 		// }
@@ -50,7 +50,7 @@ export default class FulpageParent extends React.Component {
 			hash
 		} = this.props.location
 		// console.log(hash)
-		// console.log(this.onLeave())
+		console.log(this.onLeave())
 		return (
 			<Consumer>
 				{value => {

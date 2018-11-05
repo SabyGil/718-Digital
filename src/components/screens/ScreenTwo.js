@@ -3,9 +3,12 @@ import React from 'react';
 class ScreenTwo extends React.Component {
 
 	render() {
+		const {
+			hash
+		} = this.props
 		return (
 			<div className='view-container bg-two' >
-				<div className="clip-test"></div>
+				<div id={hash == "#About" ? 'border-animation' : ''}/>
         <div id='ani-test' className="section-box --align_content screen-two scroll-bar-wrap normal-scroll">
 					{/* <svg><rect></rect></svg> */}
           {/* <div class="force-overflow"></div> */}

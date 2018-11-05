@@ -57,7 +57,7 @@ ul {
   height: 100vh;
 }
 //global classes
-.clip-test {
+#border-animation{
   height: 100%;
 position: absolute;
   width: 80%;
@@ -69,7 +69,7 @@ position: absolute;
   border: 2px solid white;
   box-shadow: inset 0 0 1.5rem white, 0 0 1.5rem white;
   // margin: 0 .2rem;
-  animation: silverBox 3s ease-in-out;
+  animation: silverBox 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 @keyframes silverBox {

@@ -89,6 +89,9 @@ class ScreenFour extends React.Component {
 		const {
 			activeModal
 		} = this.state;
+		const {
+			hash
+		} = this.props
 		return (
 			<Consumer>
         {value => {
@@ -96,6 +99,7 @@ class ScreenFour extends React.Component {
 					const { dispatch, MembersModalIsOpen } = value;
           return (
             <div className='view-container bg-four'>
+							<div id={hash == "#Members" ? 'border-animation' : ''}/>
               <div className="section-box screen-four">
                 <div className='screen-four__title'>
                   <h1>Members</h1>

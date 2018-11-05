@@ -146,7 +146,7 @@ class ThirdScreen extends React.Component {
 			<React.Fragment>
 				<Fade in={this.state.bgFade} tag="div"  className="bg-static" />
 				<Fade in={this.state.fadeIn} tag="div"  className="view-container bg-image ">
-
+				<div id={location.hash == "#Services" ? 'border-animation' : ''}/>
         {/* if route === /, collective is default */}
         <Route exact path='/' render={() => (
           <Redirect to='/collective#Main'/>
@@ -201,7 +201,7 @@ export const ScreenThree = withRouter(ThirdScreen)
 const Path = ({
 	match,
 	selectedLink,
-	onSelect
+	onSelect,
 }) => {
 	const route = routeInfo.find(({
 		heading
