@@ -3,6 +3,7 @@ import Menu from './Menu';
 import FullpageWrapper from './Fullpage';
 import $ from 'jquery';
 import GIF from '../imgs/test.gif';
+import ALIEN_LOGO from '../imgs/718_alien.png';
 import {
 	Consumer
 } from '../context';
@@ -66,7 +67,9 @@ export default class FulpageParent extends React.Component {
 
 							<div id='logo-sm' className={hash === '#Main' ? 'hide-menu' : 'fade-in-fwd' }>
 								{/* <img src={ GIF } id="logo" alt="" /> */}
-								<div className='logo-styles'>LOGO</div>
+								{/* <div className='logo-styles'>LOGO</div> */}
+								<img className='logo-styles' src={ ALIEN_LOGO } alt=""/>
+
 
 							</div>
 							{/* <div id="landing"></div> */}

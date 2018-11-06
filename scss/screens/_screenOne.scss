@@ -10,29 +10,29 @@
 }
 
 #logo-sm {
-  border: 5px solid green;
+  // border: 5px solid green;
   position: fixed;
   top: 0;
   left: 0;
-  height: 20rem;
-  width: 20rem;
+  height: 18rem;
+  width: 18rem;
   z-index: 2;
 }
 
 .hide-menu {
   display: none;
 }
-
 //---
+
 .logo-styles {
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  border: 1px solid white;
+  // border: 1px solid white;
   height: 100%;
+  padding: 1rem;
 }
-
 @include respond(media-md) {
   #logo-sm {
     position: absolute;
@@ -40,6 +40,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
   .logo-styles {
     // display: block;
   }
