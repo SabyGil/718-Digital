@@ -11,18 +11,18 @@ import 'fullpage.js/vendors/scrolloverflow';
 
 const fullpageOptions = {
 	callbacks: ['onLeave'],
-	// fixedElements: '#fixed',
-	// lazyLoading: false
-	//shows scroll bar for whole page
 	scrollOverflow: true,
 	anchors: ['Main', 'About', 'Services', 'Members', 'Contact'],
 	navigation: true,
 	controlArrows: true,
 	normalScrollElements: ".normal-scroll",
+	licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE'
+	// fixedElements: '#fixed',
+	// lazyLoading: false
+	//shows scroll bar for whole page
 	// scrollBar: true,
 	// setAutoScrolling: false,
 	// autoScrolling: false,
-	licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE'
 };
 
 export default class FulpageParent extends React.Component {
@@ -35,7 +35,7 @@ export default class FulpageParent extends React.Component {
 	// 	console.log('hello')
 	// }
 	onLeave = () => {
-		console.log('hello')
+		// console.log('hello')
 		// const logoContainer = document.querySelector('#logo-container');
 		// console.log(logoContainer.classList)
 		// if(this.props.location.hash !== '#Main') {
@@ -50,8 +50,7 @@ export default class FulpageParent extends React.Component {
 		const {
 			hash
 		} = this.props.location
-		// console.log(hash)
-		console.log(this.onLeave())
+		// console.log(this.onLeave())
 		return (
 			<Consumer>
 				{value => {
@@ -69,8 +68,6 @@ export default class FulpageParent extends React.Component {
 								{/* <img src={ GIF } id="logo" alt="" /> */}
 								{/* <div className='logo-styles'>LOGO</div> */}
 								<img className='logo-styles' src={ ALIEN_LOGO } alt=""/>
-
-
 							</div>
 							{/* <div id="landing"></div> */}
 							{/* {this.state.loader ?
@@ -88,8 +85,14 @@ export default class FulpageParent extends React.Component {
 							}
 
 							<React.Fragment>
-								<Menu navLinks={fullpageOptions.anchors} hash={hash}/>
-								<FullpageWrapper {...fullpageOptions} content={content} />
+								<Menu
+									navLinks={fullpageOptions.anchors}
+									hash={hash}
+								/>
+								<FullpageWrapper
+									{...fullpageOptions}
+									content={content}
+								 />
 							</React.Fragment>
 						</React.Fragment>
 					)}

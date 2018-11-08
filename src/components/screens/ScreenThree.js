@@ -133,15 +133,6 @@ class ThirdScreen extends React.Component {
 		// const {
 		// 	isActive
 		// } = this.state;
-		// const bgHook = document.querySelector('#bg-hook')
-		// if(isActive === false) {
-		// 	bgHook.classList.add('bg-animation')
-		// }
-		// if(isActive === false) {
-		// 	bgHook.classList.remove('bg-animation')
-		// }
-		// console.log(this.state.selectedLink, 'here')
-		// console.log(location)
 		return (
 			<React.Fragment>
 				<Fade in={this.state.bgFade} tag="div"  className="bg-static" />

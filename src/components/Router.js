@@ -6,13 +6,11 @@ import {
 import FullpageParent from './FullpageParent';
 import { Provider } from '../context';
 
-
 const Routes = () => (
 	<Provider>
 		<Router>
 	    <React.Fragment>
 	      {/* <Route path='/' render={() => <FullpageWrapper {...fullpageOptions}/> }/> */}
-	      {/* <Route path='/' render={() => <FullpageParent /> }/> */}
 	      <Route path='/' component={FullpageParent}/>
 	    </React.Fragment>
 	  </Router>

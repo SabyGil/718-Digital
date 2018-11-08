@@ -5,12 +5,9 @@ import {
 } from '../../context';
 import api from '../../utils/api';
 import ContactForm from '../ContactForm';
-// import { ContactForm } from '../ContactForm';
 import {
 	withRouter
 } from 'react-router-dom';
-
-// export const ScreenThree = withRouter(ThirdScreen)
 
 class FifthScreen extends React.Component {
 

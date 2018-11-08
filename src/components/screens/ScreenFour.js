@@ -113,8 +113,8 @@ class ScreenFour extends React.Component {
 	                          <ul>
 	                          <li>
 	                            <img
-	                              src={'https://s3.amazonaws.com/uifaces/faces/twitter/mghoz/128.jpg'}
-	                              alt=""
+	                              // src={'https://s3.amazonaws.com/uifaces/faces/twitter/mghoz/128.jpg'}
+	                              alt={this.props.img}
 	                              className='avatar'
 																onClick={e => this.handleClick(e, index, dispatch)}
 	                            />
@@ -187,6 +187,10 @@ class ScreenFour extends React.Component {
 	}
 }
 
+ScreenFour.defaultProps = {
+	img: 'IMG UNAVAILABLE'
+}
+
 const MemberInfo = props => {
 	return (
 		<React.Fragment>
@@ -194,8 +198,8 @@ const MemberInfo = props => {
 
 			{/* <img className='member-modal__img' src="" alt=""/> */}
 			<img
-				src={'https://s3.amazonaws.com/uifaces/faces/twitter/mghoz/128.jpg'}
-				alt=""
+				src={''}
+				alt={props.img}
 				className='member-modal__img'
 			/>
 			<div className="member-modal__content">
@@ -210,6 +214,10 @@ const MemberInfo = props => {
 		{/* // </div> */}
 		</React.Fragment>
 	)
+}
+
+MemberInfo.defaultProps = {
+	img: 'IMG UNAVAILABLE'
 }
 
 export default ScreenFour;

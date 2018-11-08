@@ -57,85 +57,30 @@ ul {
   height: 100vh;
 }
 //global classes
-#border-animation{
+
+#border-animation {
   height: 100%;
-position: absolute;
+  position: absolute;
   width: 80%;
   left: 10%;
-  // outline: 2px;
-  // z-index: 92;
-  // background-color: red;
-  // border: 10px solid gold;
   border: 2px solid white;
   box-shadow: inset 0 0 1.5rem white, 0 0 1.5rem white;
-  // margin: 0 .2rem;
   animation: silverBox 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-@keyframes silverBox {
-  0% {
-    clip-path: inset(0% 40% 99% 40%);
-    // clip-path: inset(0% 0% 99% 0%)
-    // clip-path: inset(0% 50% 99% 50%);
-    // clip-path: inset(0% 100% 48% 100%);
-
- }
- 30% {
-   clip-path: inset(0% 1% 99% 1%);
- }
-  66% {
-    // clip-path: inset(0% 0% 99% 0%);
-    // clip-path: inset(10% 50% 99% 10%);
-    clip-path: inset(0% 0% 25% 0%);
-
-  }
-  // 75% {
-  //   clip-path: inset(0% 0% 15% 0%);
-  //
-  // }
-  85% {
-    clip-path: inset(0% 0% 5% 0%);
-  }
-  100% {
-    clip-path: inset(0% 0% 0% 0%);
-
-  }
-}
-
 .section-box {
-  // border: 2px solid white;
-  // box-shadow: inset 0 0 1.5rem white, 0 0 1.5rem white;
   font-size: 2rem;
-  // height: 65%;
   height: 100%;
-  // top: 20%;
   position: inherit;
   width: 80%;
   left: 10%;
   display: grid;
-  // grid-template: var(--template-rows) / var(--template-cols);
   grid-template: $template-rows / $template-cols;
   overflow: auto;
-  z-index: 9;
-  // outline: 25px solid red;
+  z-index: 10;
+
   &.--align_content {
     align-content: center;
-  }
-}
-
-#form-transition {
-  animation: animate 1.5s linear;
-}
-
-@keyframes animate {
-  0% {
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-
-  100% {
-    transform: scaleX(1);
-    transform-origin: left;
   }
 }
 

@@ -6,16 +6,13 @@
   transform: translate(-50%, -50%);
 }
 @mixin imgBoxShadow {
-  // -webkit-box-shadow: 30px 20px 10px 0 rgba(0,0,0,0.75);
-  // -moz-box-shadow: 30px 20px 10px 0 rgba(0,0,0,0.75);
-  box-shadow: 30px 20px 10px 0 rgba(0,0,0,0.75);
+  box-shadow: 3rem 2rem 1rem 0 rgba(0,0,0,0.75);
 }
 @mixin sectionTitle {
   color: $primary-purple;
   font-size: 4rem;
   font-weight: 700;
 }
-
 // MEDIA QUERY MANAGER
 /*
 0 - 600px:      Phone
@@ -34,21 +31,32 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
 */
-
 @mixin respond($breakpoint) {
-    @if $breakpoint == media-sm {
-        @media only screen and (max-width: 37.5em) { @content };    //600px
-    }
-    @if $breakpoint == media-md {
-        @media screen and (max-width: 56.25em) { @content };     //900px
-    }
-    // @if $breakpoint == media-md {
-    //     @media only screen and (max-width: 56.25em) { @content };     //900px
-    // }
-    @if $breakpoint == media-lg {
-        @media only screen and (max-width: 75em) { @content };    //1200px
-    }
-    @if $breakpoint == media-xl {
-        @media only screen and (min-width: 112.5em) { @content };    //1800
-    }
+  @if $breakpoint == media-sm {
+    @media only screen and (max-width: 37.5em) {
+      @content
+    };
+    //600px
+  }
+  @if $breakpoint == media-md {
+    @media screen and (max-width: 56.25em) {
+      @content
+    };
+    //900px
+  }
+  // @if $breakpoint == media-md {
+  //     @media only screen and (max-width: 56.25em) { @content };     //900px
+  // }
+  @if $breakpoint == media-lg {
+    @media only screen and (max-width: 75em) {
+      @content
+    };
+    //1200px
+  }
+  @if $breakpoint == media-xl {
+    @media only screen and (min-width: 112.5em) {
+      @content
+    };
+    //1800
+  }
 }

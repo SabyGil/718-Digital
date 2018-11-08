@@ -5,6 +5,10 @@
   background-position: center;
 }
 
+#form-transition {
+  animation: form-input-scale 1.5s linear;
+}
+
 .screen-five {
   overflow: auto;
   display: grid;
@@ -35,18 +39,21 @@
     padding: 4rem 15rem;
 
     .form-group {
-      .form-control{
+      .form-control {
         background-color: transparent;
         border: none;
-        border-bottom:2px solid white;
-       .form-control-lg {
-         border: 1px solid blue;
-       }
-     }
+        border-bottom: 2px solid white;
+
+        .form-control-lg {
+          border: 1px solid blue;
+        }
+      }
+
       label[for=name] {
         color: white;
         font-weight: 700;
       }
+
       input {
         color: white;
       }
@@ -62,8 +69,8 @@
         &.btn {
           background: $primary-purple;
           width: 35rem;
-          text-align: center ;
-          margin: 4rem auto 0 ;
+          text-align: center;
+          margin: 4rem auto 0;
         }
       }
     }
