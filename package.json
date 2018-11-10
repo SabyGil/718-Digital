@@ -1,7 +1,7 @@
 {
   "name": "718-Digital",
   "version": "1.0.0",
-  "description": "webpack4-sass-starter",
+  "description": "718-Digital",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --open --hot --history-api-fallback",
