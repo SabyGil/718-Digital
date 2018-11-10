@@ -34,6 +34,10 @@
   padding: 1rem;
 }
 @include respond(media-md) {
+  #logo {
+    height: 50vh;
+  }
+
   #logo-sm {
     position: absolute;
     top: 12%;
@@ -43,6 +47,11 @@
 
   .logo-styles {
     // display: block;
+  }
+}
+@include respond(media-sm) {
+  #logo {
+    height: 30vh;
   }
 }
 //---
