@@ -18,7 +18,7 @@ import {
 import {
 	Fade
 } from "reactstrap";
-import Media from "react-media";
+// import Media from "react-media";
 
 const routeInfo = [{
 		id: '1',
@@ -171,8 +171,13 @@ class ThirdScreen extends React.Component {
           </CSSTransition>
         </TransitionGroup>
 
+				<NestedLink
+					selectedLink={this.state.selectedLink}
+					onSelect={this.updateLink}
+				/>
+
         {/* Links around section box */}
-				 <Media query="(min-width: 900px)">
+				 {/* <Media query="(min-width: 900px)">
 					 {matches =>
 							matches ?
 						 <NestedLink
@@ -180,7 +185,7 @@ class ThirdScreen extends React.Component {
 							 onSelect={this.updateLink}
 						 /> : null
 					 }
-				 </Media>
+				 </Media> */}
 				</Fade>
 			</React.Fragment>
 		);
@@ -199,7 +204,7 @@ const Path = ({
 	}) => heading === match.params.routeId);
 	return (
 		<div className='section-box screen-three normal-scroll'>
-			<Media query="(max-width: 899px)">
+			{/* <Media query="(max-width: 899px)">
 				{matches =>
 					 matches ?
 					<NestedLink
@@ -207,7 +212,7 @@ const Path = ({
 						onSelect={onSelect}
 					/>: null
 				}
-			</Media>
+			</Media> */}
       <div className='screen-three__img'>
 				<img src='https://images.pexels.com/photos/935870/pexels-photo-935870.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260' alt='screen three image' />
         <h1 className='overImage'>{route.contentTwo}</h1>
