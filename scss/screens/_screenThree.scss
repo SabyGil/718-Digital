@@ -103,6 +103,9 @@
   &__projects-container {
     grid-row: 4;
     grid-column: 1 / -1;
+    // margin: 3rem 0;
+    // grid-gap: 1rem;
+    padding: 1rem;
 
     .circle-bg {
       // background-color: grey;

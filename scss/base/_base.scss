@@ -50,6 +50,10 @@ ul {
   font-size: $default-font-size;
   margin-bottom: 0.5rem;
 }
+
+#fp-nav ul li a.active span {
+  background-color: white;
+}
 // view
 
 .view-container {

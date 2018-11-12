@@ -97,10 +97,8 @@ export default class TechCarousel extends React.Component {
 							{projects &&
 								<Slider {...settings}>
 									 {projects.map((project, index) => {
-									 // {slides.map((project, id) => {
 										return (
 											<div className="item " key={project.id}>
-												<p>{project.name}</p>
 												<Button color="danger" onClick={e => this.handleClick(e, index, dispatch)}>View Details</Button>
 												{activeModal === index ?
 													<Modal
@@ -117,8 +115,6 @@ export default class TechCarousel extends React.Component {
 
 																<div>
 																	<div className="project">Project</div>
-																	<p>{project.client_or_team}</p>
-
 																</div>
 
 																<div className='project-description'>
@@ -129,6 +125,9 @@ export default class TechCarousel extends React.Component {
 																		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut magnam expedita, quisquam similique. Hic doloremque suscipit cupiditate assumenda illum! Aliquid.
 																		e assumenda illum! Aliquid
 																		e assumenda illum! Aliquid
+																		<p>{project.name}</p>
+																		<p>{project.client_or_team}</p>
+
 																	</p>
 																	{'some modal content'}
 																</div>
@@ -137,7 +136,7 @@ export default class TechCarousel extends React.Component {
 																		<div className="">
 																			Client
 																		</div>
-																		<div className="b">
+																		<div className="client__img">
 																				<img src="https://images.unsplash.com/photo-1518709911915-712d5fd04677?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=79ddcb77f12424c3e6f1923670b3a8df&auto=format&fit=crop&w=634&q=80" alt=""/>
 																		</div>
 																</div>
@@ -160,8 +159,6 @@ export default class TechCarousel extends React.Component {
 																		{/* loop tech used */}
 																	</div>
 																</div>
-
-															{/* <p>{project.client_or_team}</p> */}
 														</div>
 													</Modal>
 													: null}

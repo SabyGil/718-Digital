@@ -2,24 +2,16 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
-  // position: relative;
-  // align-content: center;
-  // padding: 0;
+
   &__title {
     font-weight: 700;
-    // border: 1px solid red;
   }
 
   &__content {
     grid-column: 2 / -1;
     grid-row: 2 / 6;
-    // grid-column: 2/ 6;
     padding: 2rem;
     z-index: 10;
-
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
   }
   // &__aside
   &__img {
@@ -30,5 +22,27 @@
     border-radius: 50%;
     position: absolute;
     top: 6rem;
+  }
+}
+@include respond(media-md) {
+  .member-modal {
+    align-content: center;
+
+    &__content {
+      grid-column: 1 / -1;
+      grid-row: 2 / -1;
+      overflow: auto;
+      text-align: center;
+    }
+
+    &__img {
+      position: relative;
+      grid-column: 2 / 6;
+      grid-row: 1;
+      top: 0;
+      width: 100%;
+      // align-items: center;
+      // height: 100%;
+    }
   }
 }
