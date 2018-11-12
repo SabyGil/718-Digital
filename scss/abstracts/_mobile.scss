@@ -5,6 +5,10 @@
 //tablets & small laptops
 // @include media-md {}
 @include respond(media-md) {
+  .section-box {
+    touch-action: manipulation;
+  }
+
   #logo-sm {
     // border: 5px solid green;
     // position: fixed;
