@@ -163,6 +163,12 @@
   }
 }
 @include respond(media-sm) {
+  .section-box {
+    &.--align_content {
+      align-content: stretch;
+    }
+  }
+
   .screen-three {
     padding: 0;
     justify-content: center;

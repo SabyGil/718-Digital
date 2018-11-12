@@ -196,6 +196,7 @@ export const ScreenThree = withRouter(ThirdScreen)
 
 const Path = ({
 	match,
+	location,
 	selectedLink,
 	onSelect,
 }) => {
@@ -203,7 +204,7 @@ const Path = ({
 		heading
 	}) => heading === match.params.routeId);
 	return (
-		<div className='section-box screen-three normal-scroll'>
+		<div className='section-box screen-three --align_content normal-scroll'>
 			{/* <Media query="(max-width: 899px)">
 				{matches =>
 					 matches ?
@@ -213,23 +214,23 @@ const Path = ({
 					/>: null
 				}
 			</Media> */}
-      <div className='screen-three__img'>
+      <div className='screen-three__img glitchTest'>
 				<img src='https://images.pexels.com/photos/935870/pexels-photo-935870.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260' alt='screen three image' />
         <h1 className='overImage'>{route.contentTwo}</h1>
       </div>
       <div className='screen-three__aside'>
-        <h1>{route.contentOne}</h1>
-        lorem ipsum dipsum
+        <h1 className='glitchTest'>{route.contentOne}</h1>
+        <p className='glitchTest'>lorem ipsum dipsum
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
-        lorem ipsum dipsum
+        lorem ipsum dipsum</p>
       </div>
       <div className='screen-three__content'>
-        <h1>{route.heading}</h1>
+        <h1 className='glitchTest'>{route.heading}</h1>
 				<div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
-        lorem ipsum dipsum
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.</p>
-			</div>
+	        <p className='glitchTest'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.
+	        lorem ipsum dipsum
+	        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga quas beatae iste veritatis a repudiandae modi magnam. Veritatis, earum, magnam.</p>
+				</div>
       </div>
 
       <div className='screen-three__projects-container'>

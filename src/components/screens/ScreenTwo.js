@@ -13,7 +13,7 @@ class ScreenTwo extends React.Component {
           <h3 className='screen-two__title'>lorem ipsum lorem ipsum dipsum lorem ipsum lorem ipsum dipsum</h3>
 
           <div className='screen-two__content'>
-            <p>lorem ipsum dipsum elorem ipsum lor elorem ipsum lor</p>
+            <p className='glitchTest'>TEST lorem ipsum dipsum elorem ipsum lor elorem ipsum lor</p>
             <p>lorem ipsum dipsum elorem ipsum lor elorem ipsum lor</p>
             <p>lorem ipsum dipsum elorem ipsum lor elorem ipsum lor</p>
             <p>lorem ipsum dipsum elorem ipsum lor elorem ipsum lor</p>

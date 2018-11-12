@@ -67,24 +67,30 @@ export default class FulpageParent extends React.Component {
 							<div id='logo-sm' className={hash === '#Main' ? 'hide-menu' : 'fade-in-fwd' }>
 								{/* <img src={ GIF } id="logo" alt="" /> */}
 								{/* <div className='logo-styles'>LOGO</div> */}
-								<img className='logo-styles' src={ ALIEN_LOGO } alt=""/>
+								<img className='logo-styles logo-glitch' src={ ALIEN_LOGO } alt=""/>
 							</div>
 							{/* <div id="landing"></div> */}
-							{/* {this.state.loader ?
+							{loader ?
 								<h1>LOADING...</h1>
 								:
 								<React.Fragment>
-									<Menu />
-									<FullpageWrapper {...fullpageOptions} {...this.props} content={content}/>
+									<Menu
+										navLinks={fullpageOptions.anchors}
+										hash={hash}
+									/>
+									<FullpageWrapper
+										{...fullpageOptions}
+										content={content}
+									 />
 								</React.Fragment>
-							} */}
+							}
 							{hash === '#Main' ? '' :
 								<a href='#Main' className='scroll-to-top-arrow'>
 									<i className="fas fa-chevron-up"></i>
 								</a>
 							}
 
-							<React.Fragment>
+							{/* <React.Fragment>
 								<Menu
 									navLinks={fullpageOptions.anchors}
 									hash={hash}
@@ -93,7 +99,7 @@ export default class FulpageParent extends React.Component {
 									{...fullpageOptions}
 									content={content}
 								 />
-							</React.Fragment>
+							</React.Fragment> */}
 						</React.Fragment>
 					)}
 				}

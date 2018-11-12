@@ -97,6 +97,7 @@ class ScreenFour extends React.Component {
         {value => {
           const { members } = value.content
 					const { dispatch, MembersModalIsOpen } = value;
+					// console.log(sections[0].image)
           return (
             <div className='view-container bg-four'>
 							<div id={hash == "#Members" ? 'border-animation' : ''}/>
@@ -114,6 +115,7 @@ class ScreenFour extends React.Component {
 	                          <li>
 	                            <img
 	                              src={'https://s3.amazonaws.com/uifaces/faces/twitter/mghoz/128.jpg'}
+	                              // src={sections[0].image}
 	                              alt={this.props.img}
 	                              className='avatar'
 																onClick={e => this.handleClick(e, index, dispatch)}
