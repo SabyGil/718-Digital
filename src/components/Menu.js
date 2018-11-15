@@ -27,11 +27,7 @@ class Menu extends React.Component {
           <a className="active" className="logo" href='#Main'></a>
           <ul className={isOpen ? '' : 'center-menu'}>
             {isOpen ?
-              // <div className='menu-list scale-in-tr'>
-              // <div className='menu-list scale-in-tr scale-out-tr'>
               <div className={classnames('menu-list', {
-								// isOpen ? 'scale-in-tr' : 'scale-out-tr'
-								// 'scale-in-tr': isOpen === true : 'scale-out-tr'
 								'scale-in-tr': isOpen === true,
 								'scale-out-tr': isOpen === false
 							})

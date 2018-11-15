@@ -40,20 +40,11 @@ export default class TechCarousel extends React.Component {
 		} = this.state;
 
 		const settings = {
-			// dots: true,
-			// infinite: false,
-			// speed: 500,
-			// slidesToShow: 3,
-			// slidesToScroll: 2,
-			// arrows: true,
 			// className: 'testing',
-			//--
 			// adaptiveHeight: true,
 			dots: true,
 			infinite: false,
 			speed: 500,
-			// slidesToShow: 4,
-			// slidesToScroll: 4,
 			dontAnimate: true,
 			slidesToShow: 3,
 			slidesToScroll: 2,
@@ -93,7 +84,6 @@ export default class TechCarousel extends React.Component {
 					const { projects } = value.content;
 					return (
 						<React.Fragment>
-							{/* {slides && */}
 							{projects &&
 								<Slider {...settings}>
 									 {projects.map((project, index) => {

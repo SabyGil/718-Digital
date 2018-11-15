@@ -66,9 +66,6 @@ class FifthScreen extends React.Component {
 			message
 		}
 
-		//   axios.post('https://web-718-digital.herokuapp.com/contact', formEntry)
-		//   .then(() => console.log(formEntry, 'HERE')
-		// )
 		api.contactForm(formEntry)
 			.then(res => dispatch({
 				type: 'FORM_ENTRY',

@@ -1,7 +1,7 @@
 {
   "name": "718-Digital",
   "version": "1.0.0",
-  "description": "webpack4-sass-starter",
+  "description": "718-Digital-Website",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --open --hot --history-api-fallback",
@@ -20,7 +20,6 @@
     "jquery": "^3.3.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-media": "^1.8.0",
     "react-modal": "^3.6.1",
     "react-router-dom": "^4.3.1",
     "react-slick": "^0.23.2",

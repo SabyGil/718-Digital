@@ -3,12 +3,9 @@
 .nav-link {
   font-size: 4rem;
   text-transform: capitalize;
-  // color: $primary-purple;
   color: white;
 
-  &:active {
-    // color: red;
-  }
+  &:active {}
 
   :link {}
 }
@@ -56,9 +53,6 @@
     grid-row: 1;
     grid-column: 1 / 5;
     @include imgBoxShadow;
-    // background: url("https://images.pexels.com/photos/935870/pexels-photo-935870.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260") no-repeat center center;
-    // background-size: cover;
-    // padding: 10rem;
     position: relative;
 
     img {
@@ -103,8 +97,6 @@
   &__projects-container {
     grid-row: 4;
     grid-column: 1 / -1;
-    // margin: 3rem 0;
-    // grid-gap: 1rem;
     padding: 1rem;
 
     .circle-bg {

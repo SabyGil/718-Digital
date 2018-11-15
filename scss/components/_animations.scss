@@ -1,3 +1,4 @@
+// CONTAINS GENERAL ANIMATIONS 
 // terminal menu items blinking
 @keyframes blink {
   0%,
@@ -11,7 +12,6 @@
   70%,
   85% {
     opacity: 0.99;
-    text-shadow: -1px -1px 0 var(--outline), 1px -1px 0 var(--outline), -1px 1px 0 var(--outline), 1px 1px 0 var(--outline), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
   }
 
   0%,
@@ -80,12 +80,10 @@
 // SCREEN THREE FADE IN FWD
 @keyframes fade-in-fwd {
   0% {
-    // transform: translateZ(-80px);
     opacity: 0;
   }
 
   100% {
-    // transform: translateZ(0);
     opacity: 1;
   }
 }
@@ -93,26 +91,12 @@
 @keyframes silverBox {
   0% {
     clip-path: inset(0% 40% 99% 40%);
-    // clip-path: inset(0% 0% 99% 0%)
-    // clip-path: inset(0% 50% 99% 50%);
-    // clip-path: inset(0% 100% 48% 100%);
   }
 
   20% {
     clip-path: inset(0% 1% 99% 1%);
   }
-  // 90% {
-  //   // clip-path: inset(0% 0% 99% 0%);
-  //   // clip-path: inset(10% 50% 99% 10%);
-  //   clip-path: inset(0% 0% 25% 0%);
-  // }
-  // 75% {
-  //   clip-path: inset(0% 0% 15% 0%);
-  //
-  // }
-  // 5% {
-  //   clip-path: inset(0% 0% 5% 0%);
-  // }
+
   100% {
     clip-path: inset(0% 0% 0% 0%);
   }

@@ -27,49 +27,26 @@ const fullpageOptions = {
 
 export default class FulpageParent extends React.Component {
 
-	componentDidMount() {
-
-	}
-
-	// onLeave = () => {
-	// 	console.log('hello')
-	// }
-	onLeave = () => {
-		// console.log('hello')
-		// const logoContainer = document.querySelector('#logo-container');
-		// console.log(logoContainer.classList)
-		// if(this.props.location.hash !== '#Main') {
-		// 	logoContainer.classList.add('flicker-out-2')
-		// }
-		// if(this.props.location.hash === '#Main') {
-		// 	logoContainer.classList.remove('flicker-out-2')
-		// }
-	}
+	componentDidMount() {}
+	onLeave = () => {}
 
 	render() {
 		const {
 			hash
 		} = this.props.location
-		// console.log(this.onLeave())
 		return (
 			<Consumer>
 				{value => {
 					const { content, loader } = value;
-					console.log(content, loader)
 					return (
 						<React.Fragment>
-							{/* <div id="logo-container" className={hash === 'Main'? { display: 'block'} : 'flicker-out-2'}> */}
-
 							<div id="logo-container" className={hash !== '#Main' ? 'flicker-out-1' : '' }>
 								<img src={ GIF } id="logo" alt="" />
 							</div>
 
 							<div id='logo-sm' className={hash === '#Main' ? 'hide-menu' : 'fade-in-fwd' }>
-								{/* <img src={ GIF } id="logo" alt="" /> */}
-								{/* <div className='logo-styles'>LOGO</div> */}
 								<img className='logo-styles logo-glitch' src={ ALIEN_LOGO } alt=""/>
 							</div>
-							{/* <div id="landing"></div> */}
 							{loader ?
 								<h1>LOADING...</h1>
 								:
@@ -89,17 +66,6 @@ export default class FulpageParent extends React.Component {
 									<i className="fas fa-chevron-up"></i>
 								</a>
 							}
-
-							{/* <React.Fragment>
-								<Menu
-									navLinks={fullpageOptions.anchors}
-									hash={hash}
-								/>
-								<FullpageWrapper
-									{...fullpageOptions}
-									content={content}
-								 />
-							</React.Fragment> */}
 						</React.Fragment>
 					)}
 				}

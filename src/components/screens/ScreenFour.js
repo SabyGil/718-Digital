@@ -77,8 +77,8 @@ class ScreenFour extends React.Component {
 	}
 
 	prevModalKeyPress = e => {
-		console.log(e.keyCode, 'called');
-		// console.log('called');
+		// console.log(e.keyCode, 'called');
+		console.log('called');
 		//left = 37, right = 39
 		/*
 		  if keycode equals 37 && currentIndex !== 0
@@ -140,13 +140,6 @@ class ScreenFour extends React.Component {
 													// onKeyDown={this.prevModalKeyPress}
 													// tabIndex="0"
 													>
-														{/* <div className="modal-outline">
-															<div className='modal-title'>PROJECT</div>
-															<span>{name}</span>
-															<span>{about}</span>
-														</div> */}
-														{/* <span>{name}</span>
-														<span>{about}</span> */}
 														<button onClick={()=>dispatch({type:"CLOSE_MEMBERS_MODAL"})} className='modal-close-btn'>
 																<i className="fas fa-times" />
 														</button>
@@ -155,10 +148,10 @@ class ScreenFour extends React.Component {
 															<i
 																className="fas fa-chevron-left"
 																onClick={e => this.prevModal(e, index, members)}
-																// onKeyDown={this.prevModalKeyPress}
+																onKeyDown={this.prevModalKeyPress}
 																// onKeyDown={() => this.prevModalKeyPress()}
 																// onKeyDown={console.log('arrow right')}
-																// tabIndex="0"
+																tabIndex="0"
 															/>
 															: null
 														}
@@ -196,9 +189,6 @@ ScreenFour.defaultProps = {
 const MemberInfo = props => {
 	return (
 		<React.Fragment>
-		{/* // <div className=""> */}
-
-			{/* <img className='member-modal__img' src="" alt=""/> */}
 			<img
 				src={'https://s3.amazonaws.com/uifaces/faces/twitter/mghoz/128.jpg'}
 				alt={props.img}
@@ -212,8 +202,6 @@ const MemberInfo = props => {
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt vel possimus quaerat, nisi, quasi distinctio velit praesentium laborum architecto adipisci voluptatum error quisquam. Fugit quis, non velit quam consequatur.
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quod, deleniti a molestias commodi nemo id pariatur velit facere quos officia, necessitatibus dolorum voluptatem distinctio tempora sit qui corporis laboriosam.
 			</div>
-
-		{/* // </div> */}
 		</React.Fragment>
 	)
 }
